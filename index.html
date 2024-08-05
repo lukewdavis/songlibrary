@@ -1,48 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Song Library</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>Song Library</title>
 
-<link rel="stylesheet" href="styles.css">
-</head>
+		<link rel="stylesheet" href="styles.css">
+	</head>
 
-<body>
-	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+	<body>
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
 		<ul id="myUL">
-		  <li><a href="#">Adele</a></li>
-		  <li><a href="#">Agnes</a></li>
+			<li>
+				<div class="dropdown">
+					<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+					<div id="myDropdown" class="dropdown-content">
+						<a href="songs/files/firstsong.pdf">First Song</a>
+						<a href="#">Link 2</a>
+						<a href="#">Link 3</a>
+					</div>
+				</div>
+			</li>
+			<li><a href="#">Agnes</a></li>
+			<li><a href="#">Billy</a></li>
+			<li><a href="#">Bob</a></li>
 
-		  <li><a href="#">Billy</a></li>
-		  <li><a href="#">Bob</a></li>
-
-		  <li><a href="#">Calvin</a></li>
-		  <li><a href="#">Christina</a></li>
-		  <li><a href="#">Cindy</a></li>
+			<li><a href="#">Calvin</a></li>
+			<li><a href="#">Christina</a></li>
+			<li><a href="#">Cindy</a></li>
 		</ul>
-</body>
+	</body>
 
-<script>
-	function myFunction() {
-	  // Declare variables
-	  var input, filter, ul, li, a, i, txtValue;
-	  input = document.getElementById('myInput');
-	  filter = input.value.toUpperCase();
-	  ul = document.getElementById("myUL");
-	  li = ul.getElementsByTagName('li');
+	<script>
+		function myFunction() {
+		  // Declare variables
+		  var input, filter, ul, li, a, i, txtValue;
+		  input = document.getElementById('myInput');
+		  filter = input.value.toUpperCase();
+		  ul = document.getElementById("myUL");
+		  li = ul.getElementsByTagName('li');
 
-	  // Loop through all list items, and hide those who don't match the search query
-	  for (i = 0; i < li.length; i++) {
-		a = li[i].getElementsByTagName("a")[0];
-		txtValue = a.textContent || a.innerText;
-		if (txtValue.toUpperCase().indexOf(filter) > -1) {
-		  li[i].style.display = "";
-		} else {
-		  li[i].style.display = "none";
+		  // Loop through all list items, and hide those who don't match the search query
+		  for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			txtValue = a.textContent || a.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			  li[i].style.display = "";
+			} else {
+			  li[i].style.display = "none";
+			}
+		  }
 		}
-	  }
-	}
-</script>
+		
+		/* When the user clicks on the button,
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+		  document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown menu if the user clicks outside of it
+		window.onclick = function(event) {
+		  if (!event.target.matches('.dropbtn')) {
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for (i = 0; i < dropdowns.length; i++) {
+			  var openDropdown = dropdowns[i];
+			  if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			  }
+			}
+		  }
+		}
+	</script>
 
 </html>
