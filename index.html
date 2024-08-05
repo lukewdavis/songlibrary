@@ -15,21 +15,13 @@
 		</div>
 
 		<ul id="songList">
-			<li id="First Song"><a href="songs/files/firstsong.pdf">First Song</a></li>
-			<li id="Agnes"><a href="#">Agnes</a></li>
+			<li><a href="songs/files/firstsong.pdf">First Song</a></li>
+			<li><a href="#">Agnes</a></li>
 
-			<li id="Billy"><a href="#">Billy</a></li>
+			<li><a href="#">Billy</a></li>
 
-			<li id="Calvin"><a href="#">Calvin</a></li>
+			<li><a href="#">Calvin</a></li>
 			
-			<li id="Open Section 1">
-				<div>
-					<button type="button" class="collapsible">Open Section 1</button>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-				</div>
-			</li>
 		</ul>
 		
 	</body>
@@ -41,7 +33,7 @@
 			input = document.getElementById('songSearch');
 			filter = input.value.toUpperCase();
 			ul = document.getElementById("songList");
-			li = ul.getElementsById('li');
+			li = ul.getElementsByTagName('li');
 
 			// Loop through all list items, and hide those who don't match the search query
 			for (i = 0; i < li.length; i++) {
@@ -53,21 +45,6 @@
 					li[i].style.display = "none";
 				}
 			}
-		}
-		
-		var coll = document.getElementsByClassName("collapsible");
-		var i;
-
-		for (i = 0; i < coll.length; i++) {
-			coll[i].addEventListener("click", function() {
-				this.classList.toggle("active");
-				var content = this.nextElementSibling;
-				if (content.style.display === "block") {
-					content.style.display = "none";
-				} else {
-					content.style.display = "block";
-				}
-			});
 		}
 	</script>
 
