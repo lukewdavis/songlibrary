@@ -24,6 +24,14 @@
 			<li><a href="#">Calvin</a></li>
 			<li><a href="#">Christina</a></li>
 			<li><a href="#">Cindy</a></li>
+			<li>
+				<div>
+					<button type="button" class="collapsible">Open Section 1</button>
+					<div class="content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+				</div>
+			</li>
 		</ul>
 		
 		<button type="button" class="collapsible">Open Section 1</button>
@@ -39,7 +47,7 @@
 			input = document.getElementById('songSearch');
 			filter = input.value.toUpperCase();
 			ul = document.getElementById("songList");
-			li = ul.getElementsByTagName('li');
+			li = ul.button.getElementsByTagName('li');
 
 			// Loop through all list items, and hide those who don't match the search query
 			for (i = 0; i < li.length; i++) {
