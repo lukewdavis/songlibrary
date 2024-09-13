@@ -34,7 +34,9 @@
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 800px; /* Set your desired maximum width here */
+  width: 100%; /* Ensure it scales with the screen width */
+  margin: 0 auto; /* Center the video container */
   background: #000;
 }
 
