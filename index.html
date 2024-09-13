@@ -5,23 +5,6 @@
 		<title>Song Library</title>
 
 		<link rel="stylesheet" href="styles.css">
-
-		<script type="text/javascript">
-		        function sortList(ul){
-		            var new_ul = ul.cloneNode(false);
-		            var lis = [];
-		            for(var i = ul.childNodes.length; i--;){
-		                if(ul.childNodes[i].nodeName === 'LI')
-		                    lis.push(ul.childNodes[i]);
-		            }
-		            lis.sort(function(a, b){
-		               return parseInt(b.childNodes[0].data , 10) - parseInt(a.childNodes[0].data , 10);
-		            });
-		            for(var i = 0; i < lis.length; i++)
-		                new_ul.appendChild(lis[i]);
-		            ul.parentNode.replaceChild(new_ul, ul);
-		        }
-		    </script>
 	</head>
 
 	<body>
@@ -32,20 +15,12 @@
 		</div>
 
 		<ul id="songList">
-			<li><a href="songs/files/WellOfGrace.pdf">Well Of Grace</a></li>
 			<li><a href="songs/files/FixItMan.pdf">Fix It Man</a></li>
 			<li><a href="songs/files/HeIsGoodToMe.pdf">He Is Good To Me</a></li>
 			<li><a href="songs/files/IThankGodForGrace.pdf">I Thank God For Grace</a></li>
 			<li><a href="songs/files/TwoCoats.pdf">Two Coats</a></li>
-		</ul>
-
-		<script type="text/javascript">
-			!function(){
-			    var uls = document.getElementsByTagName('ul');
-			    sortList( uls[uls.length - 1] );
-			}();
-		</script>
-		
+			<li><a href="songs/files/WellOfGrace.pdf">Well Of Grace</a></li>
+		</ul>		
 	</body>
 
 	<script>
