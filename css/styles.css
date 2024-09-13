@@ -1,6 +1,6 @@
 #songSearch {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  backgound-size: contain;
+  background-size: contain;
   background-repeat: no-repeat; /* Do not repeat the icon image */
   width: 25%; 
   font-size: 16px; /* Increase font-size */
