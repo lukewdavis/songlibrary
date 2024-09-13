@@ -1,15 +1,10 @@
-.lyrics {
+.lyrics pre {
   font-family: Verdana, sans-serif;
   font-size: 15px; /* Font size */
   line-height: 1.5; /* Line spacing */
   color: #333; /* Text color */
   white-space: pre-wrap; /* Preserve line breaks and spaces */
-  margin: 20px auto; /* Add margin around the lyrics and center align */
-  max-width: 100%; /* Ensure it doesn't exceed the width of the container */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  overflow-wrap: break-word; /* Handle long words and prevent overflow */
-  word-wrap: break-word; /* Handle long words and prevent overflow */
-  word-break: break-all; /* Force long words or text to break */
+  margin: 20px; /* Add margin around the lyrics */
 }
 
 .pretty-button {
@@ -30,6 +25,6 @@
 }
 
 .pretty-button:active {
-background-color: #004085; /* Even darker background when clicked */
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow effect on click */
+  background-color: #004085; /* Even darker background when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow effect on click */
 }
