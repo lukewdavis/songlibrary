@@ -46,33 +46,34 @@
 
 		function sortList() {
 			  var list, i, switching, b, shouldSwitch;
-			  list = document.getElementById("songlist");
+			  ul = document.getElementById("songList");
+			  li = ul.getElementsByTagName('li');
 			  switching = true;
 			  /* Make a loop that will continue until
 			  no switching has been done: */
 			  while (switching) {
 				    // start by saying: no switching is done:
 				    switching = false;
-				    b = list.getElementsByTagName("li");
 				    // Loop through all list-items:
-				    for (i = 0; i < (b.length - 1); i++) {
-					      // start by saying there should be no switching:
-					      shouldSwitch = false;
-					      /* check if the next item should
-					      switch place with the current item: */
-					    console.log(b[i].getElementsByTagName('a').innerHTML.toLowerCase())
-					      if (b[i].getElementsByTagName('a').innerHTML.toLowerCase() > b[i + 1].getElementsByTagName('a').innerHTML.toLowerCase()) {
+				  for (i = 0; i < li.length; i++) {
+					a = li[i].getElementsByTagName("a")[0];
+					txtValueA = a.textContent || a.innerText;
+
+					  b = li[i+1].getElementsByTagName("a")[0];
+					txtValueB = b.textContent || b.innerText;
+					  if (txtValueA.toLowerCase() > txtValueB.toLowerCase()) {
 						        /* if next item is alphabetically
 						        lower than current item, mark as a switch
 						        and break the loop: */
 						        shouldSwitch = true;
 						        break;
 					      }
-				    }
+				}
+
 				    if (shouldSwitch) {
 					      /* If a switch has been marked, make the switch
 					      and mark the switch as done: */
-					      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+					      li[i].parentNode.insertBefore(b[i + 1], b[i]);
 					      switching = true;
 				    }
 			  }
