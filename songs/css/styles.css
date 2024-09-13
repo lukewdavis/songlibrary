@@ -9,6 +9,7 @@
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   overflow-wrap: break-word; /* Handle long words and prevent overflow */
   word-wrap: break-word; /* Handle long words and prevent overflow */
+  word-break: break-all; /* Force long words or text to break */
 }
 
 .pretty-button {
