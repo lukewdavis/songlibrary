@@ -1,13 +1,14 @@
 #songSearch {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  background-size: contain;
+  background-size: 20px 20px; /* Set size for the icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
+  background-position: 10px center; /* Position the icon inside the input field */
   width: 25%; 
   font-size: 16px; /* Increase font-size */
   padding: 12px 20px 12px 40px; /* Add some padding */
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
-  float: right;
+  float: right; /* Align the search box to the right */
 }
 
 #songList {
