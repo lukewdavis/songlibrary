@@ -45,39 +45,36 @@
 		}
 
 		function sortList() {
-			  var list, i, switching, b, shouldSwitch;
-			  ul = document.getElementById("songList");
-			  li = ul.getElementsByTagName('li');
-			  switching = true;
-			  /* Make a loop that will continue until
-			  no switching has been done: */
-			  while (switching) {
-				    // start by saying: no switching is done:
-				    switching = false;
-				    // Loop through all list-items:
-				  for (i = 0; i < li.length; i++) {
-					a = li[i].getElementsByTagName("a")[0];
-					txtValueA = a.textContent || a.innerText;
-
-					  b = li[i+1].getElementsByTagName("a")[0];
-					txtValueB = b.textContent || b.innerText;
-					  if (txtValueA.toLowerCase() > txtValueB.toLowerCase()) {
-						        /* if next item is alphabetically
-						        lower than current item, mark as a switch
-						        and break the loop: */
-						        shouldSwitch = true;
-						        break;
-					      }
-				}
-
-				    if (shouldSwitch) {
-					      /* If a switch has been marked, make the switch
-					      and mark the switch as done: */
-					      li[i].parentNode.insertBefore(b[i + 1], b[i]);
-					      switching = true;
-				    }
-			  }
+		    var ul, li, switching, i, shouldSwitch, txtValueA, txtValueB;
+		    ul = document.getElementById("songList");
+		    li = ul.getElementsByTagName('li');
+		    switching = true;
+		
+		    // Loop until no more switching is needed
+		    while (switching) {
+		        switching = false;
+		        // Loop through all list-items
+		        for (i = 0; i < li.length - 1; i++) {
+		            var a = li[i].getElementsByTagName("a")[0];
+		            var b = li[i + 1].getElementsByTagName("a")[0];
+		            txtValueA = a.textContent || a.innerText;
+		            txtValueB = b.textContent || b.innerText;
+		
+		            if (txtValueA.toLowerCase() > txtValueB.toLowerCase()) {
+		                // Mark that a switch is needed
+		                shouldSwitch = true;
+		                break;
+		            }
+		        }
+		
+		        if (shouldSwitch) {
+		            // Switch the positions of the two items
+		            li[i].parentNode.insertBefore(li[i + 1], li[i]);
+		            switching = true; // A switch has been done
+		        }
+		    }
 		}
+
 	</script>
 
 </html>
