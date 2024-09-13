@@ -4,7 +4,11 @@
   line-height: 1.5; /* Line spacing */
   color: #333; /* Text color */
   white-space: pre-wrap; /* Preserve line breaks and spaces */
-  margin: 20px; /* Add margin around the lyrics */
+  margin: 20px auto; /* Add margin around the lyrics and center align */
+  max-width: 100%; /* Ensure it doesn't exceed the width of the container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow-wrap: break-word; /* Handle long words and prevent overflow */
+  word-wrap: break-word; /* Handle long words and prevent overflow */
 }
 
 .pretty-button {
