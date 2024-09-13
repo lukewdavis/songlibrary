@@ -31,12 +31,17 @@
 
 .video-container {
   position: relative;
-  height: 0;
-  overflow: hidden;
-  max-width: 800px; /* Set your desired maximum width here */
-  width: 100%; /* Ensure it scales with the screen width */
-  margin: 0 auto; /* Center the video container */
-  background: #000;
+  width: 100%;
+  max-width: 800px; /* Set your desired maximum width */
+  max-height: 450px; /* Set your desired maximum height */
+  margin: 0 auto; /* Center the container */
+  background: #000; /* Background color to match video black bars */
+}
+
+.video-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* Aspect ratio for 16:9 */
 }
 
 .video-container iframe {
