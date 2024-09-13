@@ -60,7 +60,8 @@
 					      shouldSwitch = false;
 					      /* check if the next item should
 					      switch place with the current item: */
-					      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+					    console.log(b[i].getElementsByTagName('a').innerHTML.toLowerCase())
+					      if (b[i].getElementsByTagName('a').innerHTML.toLowerCase() > b[i + 1].getElementsByTagName('a').innerHTML.toLowerCase()) {
 						        /* if next item is alphabetically
 						        lower than current item, mark as a switch
 						        and break the loop: */
