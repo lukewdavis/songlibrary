@@ -1,6 +1,12 @@
 /*!
- * (modified) jQuery Chord Transposer plugin v1.0
+ * jQuery Chord Transposer plugin v1.0
  * http://codegavin.com/projects/transposer
+ *
+ * Copyright 2010, Jesse Gavin
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://codegavin.com/license
+ *
+ * Date: Sat Jun 26 21:27:00 2010 -0600
  */
 (function($) {
 
@@ -192,20 +198,28 @@
       
       currentKey = getKeyByName(startKey);
 
-      // Build transpose dropdown ===========================================
-      var $select = $("<select class='transpose-select'></select>");
+      // Build tranpose links ===========================================
+      var keyLinks = [];
       $(keys).each(function(i, key) {
-          var selected = currentKey.name == key.name ? "selected" : "";
-          $select.append("<option value='" + key.name + "' " + selected + ">" + key.name + "</option>");
+          if (currentKey.name == key.name)
+              keyLinks.push("<a href='#' class='selected'>" + key.name + "</a>");
+          else
+              keyLinks.push("<a href='#'>" + key.name + "</a>");
+      });
+
+
+      var $this = $(this);
+      var keysHtml = $("<div class='transpose-keys'></div>");
+      keysHtml.html(keyLinks.join(""));
+      $("a", keysHtml).click(function(e) {
+          e.preventDefault();
+          transposeSong($this, $(this).text());
+          $(".transpose-keys a").removeClass("selected");
+          $(this).addClass("selected");
+          return false;
       });
       
-      $this.before($select);
-      
-      $select.change(function(e) {
-          transposeSong($this, $(this).val());
-          $select.find("option").removeAttr("selected");
-          $select.find("option[value='" + $(this).val() + "']").attr("selected", "selected");
-      });
+      $(this).before(keysHtml);
 
       var output = [];
       var lines = $(this).text().split(/\r\n|\n/g);
