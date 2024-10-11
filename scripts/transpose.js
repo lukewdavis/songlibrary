@@ -1,14 +1,20 @@
 const chordMap = {
-    'C': ['C', 'G', 'Am', 'F'],
-    'D': ['D', 'A', 'Bm', 'G'],
-    'E': ['E', 'B', 'C#m', 'A'],
-    'F': ['F', 'C', 'Dm', 'Bb'],
-    'G': ['G', 'D', 'Em', 'C'],
-    'A': ['A', 'E', 'F#m', 'D'],
-    'B': ['B', 'F#', 'G#m', 'E']
+    'C': ['C', 'G', 'Am', 'F', 'C/E'],
+    'C#': ['C#', 'G#', 'A#m', 'F#', 'C#/E#'],
+    'D': ['D', 'A', 'Bm', 'G', 'D/F#'],
+    'D#': ['D#', 'A#', 'C#m', 'G#', 'D#/F##'],
+    'E': ['E', 'B', 'C#m', 'A', 'E/G#'],
+    'F': ['F', 'C', 'Dm', 'Bb', 'F/A'],
+    'F#': ['F#', 'C#', 'D#m', 'B', 'F#/A#'],
+    'G': ['G', 'D', 'Em', 'C', 'G/B'],
+    'G#': ['G#', 'D#', 'F#m', 'C#', 'G#/B'],
+    'A': ['A', 'E', 'F#m', 'D', 'A/C#'],
+    'A#': ['A#', 'F', 'G#m', 'D#', 'A#/C#'],
+    'B': ['B', 'F#', 'G#m', 'E', 'B/D#']
 };
 
-const originalChords = ['C', 'G', 'Am', 'F'];
+// Original chords in the lyrics, including variations if necessary
+const originalChords = ['C', 'G', 'Am', 'F', 'C/E'];
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
@@ -23,8 +29,3 @@ function changeKey() {
 
     document.getElementById('lyric-content').textContent = transposedLyrics;
 }
-
-// Set default key when the page loads
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('key-select').value = 'C'; // Default key
-});
