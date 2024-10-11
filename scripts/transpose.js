@@ -13,7 +13,15 @@ const chordMap = {
     'B': ['B', 'F#', 'G#m', 'E', 'B/D#']
 };
 
-let originalLyrics = ''; // Initialize empty variable to hold lyrics
+let originalLyrics = ''; // Declare this variable to hold the original lyrics
+
+// Function to initialize lyrics and key on page load
+document.addEventListener("DOMContentLoaded", function() {
+    const lyricsElement = document.getElementById('lyric-content');
+    originalLyrics = lyricsElement.textContent; // Capture the original lyrics
+    document.getElementById('key-select').value = 'C'; // Default key
+    changeKey(); // Initialize with default key
+});
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
@@ -22,7 +30,7 @@ function changeKey() {
     // Start with the original lyrics
     let transposedLyrics = originalLyrics;
 
-    // Iterate over the original chord map to replace with the selected key chords
+    // Replace original chords with the chords in the selected key
     for (const [key, chords] of Object.entries(chordMap)) {
         if (key === selectedKey) {
             // No need to replace if it's the same key
@@ -31,7 +39,6 @@ function changeKey() {
 
         chords.forEach((chord, index) => {
             const regex = new RegExp(`\\b${chord}\\b`, 'g');
-            // Replace original chord with the corresponding chord in the selected key
             transposedLyrics = transposedLyrics.replace(regex, chordMap[selectedKey][index]);
         });
     }
@@ -39,4 +46,3 @@ function changeKey() {
     // Update the displayed lyrics
     document.getElementById('lyric-content').textContent = transposedLyrics;
 }
-
