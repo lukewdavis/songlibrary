@@ -22,21 +22,21 @@ function changeKey() {
     // Start with the original lyrics
     let transposedLyrics = originalLyrics;
 
-    // Iterate over the original chord map to replace with the selected key chords
-    for (const [key, chords] of Object.entries(chordMap)) {
-        if (key === selectedKey) {
-            // No need to replace if it's the same key
-            continue;
-        }
+    // Use the original chords for the selected key
+    const selectedChords = chordMap[selectedKey];
 
-        chords.forEach((chord, index) => {
+    // Replace the chords in the original lyrics based on the selected key
+    Object.keys(chordMap).forEach(key => {
+        if (key === selectedKey) return; // Skip the current key
+
+        chordMap[key].forEach((chord, index) => {
             const regex = new RegExp(`\\b${chord}\\b`, 'g');
-            // Replace original chord with the corresponding chord in the selected key
-            transposedLyrics = transposedLyrics.replace(regex, chordMap[selectedKey][index]);
+            transposedLyrics = transposedLyrics.replace(regex, selectedChords[index]);
         });
-    }
+    });
 
     // Update the displayed lyrics
     document.getElementById('lyric-content').textContent = transposedLyrics;
 }
+
 
