@@ -14,10 +14,12 @@ const chordMap = {
 };
 
 let originalLyrics = ''; // Initialize empty variable to hold lyrics
+let originalChords = [];
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
     const selectedKey = keySelect.value;
+    originalChords = chordMap[selectedKey];
 
     // Reset lyrics to original
     let transposedLyrics = originalLyrics;
