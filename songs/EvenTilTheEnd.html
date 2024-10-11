@@ -6,47 +6,6 @@
     <title>Even Til' the End</title>
     <link rel="icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/songs/css/styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            margin: 0;
-        }
-        .dropdown-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        #key-select {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-            cursor: pointer;
-            transition: border 0.3s ease;
-        }
-        #key-select:hover {
-            border-color: #888;
-        }
-        .lyrics {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            max-width: 700px;
-        }
-        .chords {
-            color: gray;
-            font-style: italic;
-        }
-    </style>
 </head>
 <body>
     <h1 style="text-align: center; margin-bottom: 5px;">Even Til' the End</h1>
@@ -134,14 +93,5 @@ Oh, Jesus, He is the Best Friend in my life
     </div>
     
     <script src="../scripts/transpose.js"></script>
-    <script>
-        // Function to initialize lyrics and key on page load
-        document.addEventListener("DOMContentLoaded", function() {
-            const lyricsElement = document.getElementById('lyric-content');
-            originalLyrics = lyricsElement.textContent; // Capture the original lyrics
-            document.getElementById('key-select').value = 'C'; // Default key
-            changeKey(); // Initialize with default key
-        });
-    </script>
 </body>
 </html>
