@@ -13,7 +13,15 @@ const chordMap = {
     'B': ['B', 'F#', 'G#m', 'E', 'B/D#']
 };
 
-let originalLyrics = ''; // Initialize empty variable to hold lyrics
+let originalLyrics = ''; // Declare this variable to hold the original lyrics
+
+// Function to initialize lyrics and key on page load
+document.addEventListener("DOMContentLoaded", function() {
+    const lyricsElement = document.getElementById('lyric-content');
+    originalLyrics = lyricsElement.textContent; // Capture the original lyrics
+    document.getElementById('key-select').value = 'C'; // Default key
+    changeKey(); // Initialize with default key
+});
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
@@ -38,5 +46,3 @@ function changeKey() {
     // Update the displayed lyrics
     document.getElementById('lyric-content').textContent = transposedLyrics;
 }
-
-
