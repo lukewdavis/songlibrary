@@ -15,14 +15,6 @@ const chordMap = {
 
 let originalLyrics = ''; // Declare this variable to hold the original lyrics
 
-// Function to initialize lyrics and key on page load
-document.addEventListener("DOMContentLoaded", function() {
-    const lyricsElement = document.getElementById('lyric-content');
-    originalLyrics = lyricsElement.textContent; // Capture the original lyrics
-    document.getElementById('key-select').value = 'C'; // Default key
-    changeKey(); // Initialize with default key
-});
-
 function changeKey() {
     const keySelect = document.getElementById('key-select');
     const selectedKey = keySelect.value;
