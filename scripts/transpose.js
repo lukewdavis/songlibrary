@@ -14,6 +14,7 @@ const chordMap = {
 };
 
 let originalLyrics = ''; // Declare this variable to hold the original lyrics
+let originalChords = [];
 
 
 function changeKey() {
