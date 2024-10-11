@@ -19,13 +19,18 @@ function changeKey() {
     const keySelect = document.getElementById('key-select');
     const selectedKey = keySelect.value;
 
-    // Reset lyrics to original
-    let transposedLyrics = originalLyrics;
+    // Iterate over the chord map to transpose the chords
+    for (const [key, chords] of Object.entries(chordMap)) {
+        const regex = new RegExp(`\\b${key}\\b`, 'g');
+        
+        // Check if the key is not the selected key
+        if (key !== selectedKey) {
+            chords.forEach((chord, index) => {
+                transposedLyrics = transposedLyrics.replace(regex, chordMap[selectedKey][index]);
+            });
+        }
+    }
 
-    originalChords.forEach((chord, index) => {
-        const regex = new RegExp(`\\b${chord}\\b`, 'g');
-        transposedLyrics = transposedLyrics.replace(regex, chordMap[selectedKey][index]);
-    });
-
+    // Update the displayed lyrics
     document.getElementById('lyric-content').textContent = transposedLyrics;
 }
