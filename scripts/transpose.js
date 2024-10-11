@@ -16,6 +16,8 @@ const chordMap = {
 let originalLyrics = ''; // Declare this variable to hold the original lyrics
 let originalChords = [];
 
+console.log(originalLyrics);
+console.log(originalChords);
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
