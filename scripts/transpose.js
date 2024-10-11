@@ -13,8 +13,8 @@ const chordMap = {
     'B': ['B', 'F#', 'G#m', 'E', 'B/D#']
 };
 
-// Original chords in the lyrics, including variations if necessary
-const originalChords = ['C', 'G', 'Am', 'F', 'C/E', 'G/B'];
+let originalLyrics = ''; // Declare this variable to hold the original lyrics
+
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
