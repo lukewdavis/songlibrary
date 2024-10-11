@@ -13,36 +13,19 @@ const chordMap = {
     'B': ['B', 'F#', 'G#m', 'E', 'B/D#']
 };
 
-let originalLyrics = ''; // Declare this variable to hold the original lyrics
-
-// Function to initialize lyrics and key on page load
-document.addEventListener("DOMContentLoaded", function() {
-    const lyricsElement = document.getElementById('lyric-content');
-    originalLyrics = lyricsElement.textContent; // Capture the original lyrics
-    document.getElementById('key-select').value = 'C'; // Default key
-    changeKey(); // Initialize with default key
-});
+// Original chords in the lyrics, including variations if necessary
+const originalChords = ['C', 'G', 'Am', 'F', 'C/E', 'G/B'];
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
     const selectedKey = keySelect.value;
 
-    // Start with the original lyrics
-    let transposedLyrics = originalLyrics;
+    let transposedLyrics = document.getElementById('lyric-content').textContent;
 
-    // Use the original chords for the selected key
-    const selectedChords = chordMap[selectedKey];
-
-    // Replace the chords in the original lyrics based on the selected key
-    Object.keys(chordMap).forEach(key => {
-        if (key === selectedKey) return; // Skip the current key
-
-        chordMap[key].forEach((chord, index) => {
-            const regex = new RegExp(`\\b${chord}\\b`, 'g');
-            transposedLyrics = transposedLyrics.replace(regex, selectedChords[index]);
-        });
+    originalChords.forEach((chord, index) => {
+        const regex = new RegExp(`\\b${chord}\\b`, 'g');
+        transposedLyrics = transposedLyrics.replace(regex, chordMap[selectedKey][index]);
     });
 
-    // Update the displayed lyrics
     document.getElementById('lyric-content').textContent = transposedLyrics;
 }
