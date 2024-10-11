@@ -15,26 +15,17 @@ const chordMap = {
 
 let originalLyrics = ''; // Declare this variable to hold the original lyrics
 
+
 function changeKey() {
     const keySelect = document.getElementById('key-select');
     const selectedKey = keySelect.value;
 
-    // Start with the original lyrics
-    let transposedLyrics = originalLyrics;
+    let transposedLyrics = document.getElementById('lyric-content').textContent;
 
-    // Use the original chords for the selected key
-    const selectedChords = chordMap[selectedKey];
-
-    // Replace the chords in the original lyrics based on the selected key
-    Object.keys(chordMap).forEach(key => {
-        if (key === selectedKey) return; // Skip the current key
-
-        chordMap[key].forEach((chord, index) => {
-            const regex = new RegExp(`\\b${chord}\\b`, 'g');
-            transposedLyrics = transposedLyrics.replace(regex, selectedChords[index]);
-        });
+    originalChords.forEach((chord, index) => {
+        const regex = new RegExp(`\\b${chord}\\b`, 'g');
+        transposedLyrics = transposedLyrics.replace(regex, chordMap[selectedKey][index]);
     });
 
-    // Update the displayed lyrics
     document.getElementById('lyric-content').textContent = transposedLyrics;
 }
