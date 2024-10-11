@@ -9,6 +9,10 @@
 		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
 		<link rel="stylesheet" href="/songs/css/styles.css">
+
+		<style>
+			.chords { color: gray; font-style: italic; }
+	    	</style>
 	</head>
 
 	<body>
@@ -16,7 +20,18 @@
 		<h2 style="text-align: center; margin: 5px;">Album: That's My God</h2>
 		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;">The Lindseys</h3>
 <!-- 		<p style="text-align: center;"><a href="/songs/files/songtitle.pdf" class="pretty-button">Print Song</a></p> -->
-
+<div style="text-align: center; margin-bottom: 20px;">
+        <label for="key-select">Choose a key:</label>
+        <select id="key-select" onchange="changeKey()">
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select>
+    </div>
 		<div class="lyrics">
 			<pre>
 [Verse 1]
@@ -55,5 +70,5 @@ Oh, Jesus, He is the Best Friend in my life
 	        </div>
     
 	</body>
-
+<script src="../../scripts/transpose.js"></script>
 </html>
