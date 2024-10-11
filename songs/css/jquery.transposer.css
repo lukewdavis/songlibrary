@@ -17,10 +17,11 @@ span.c {
 	margin: 10px 0;
 	overflow: auto;
 	font: normal 11px sans-serif;
-}
-.transpose-keys a { 
 	display: flex;
     	justify-content: center;
+}
+.transpose-keys a { 
+	display: block;
 	float: left;
 	width: 2.25em;
 	text-align: center;
