@@ -1,26 +1,64 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>Even Til' the End</title>
-
-		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
-
-		<link rel="stylesheet" href="/songs/css/styles.css">
-
-		<style>
-			.chords { color: gray; font-style: italic; }
-	    	</style>
-	</head>
-
-	<body>
-		<h1 style="text-align: center; margin-bottom: 5px;">Even Til' the End</h1>
-		<h2 style="text-align: center; margin: 5px;">Album: That's My God</h2>
-		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;">The Lindseys</h3>
-<!-- 		<p style="text-align: center;"><a href="/songs/files/songtitle.pdf" class="pretty-button">Print Song</a></p> -->
-<div style="text-align: center; margin-bottom: 20px;">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Til' the End</title>
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/songs/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 10px;
+        }
+        .dropdown-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #key-select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: border 0.3s ease;
+        }
+        #key-select:hover {
+            border-color: #888;
+        }
+        .lyrics {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .chords {
+            color: gray;
+            font-style: italic;
+        }
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 5px;">Even Til' the End</h1>
+    <h2 style="text-align: center; margin: 5px;">Album: That's My God</h2>
+    <h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;">The Lindseys</h3>
+    
+    <div class="dropdown-container">
         <label for="key-select">Choose a key:</label>
         <select id="key-select" onchange="changeKey()">
             <option value="C">C</option>
@@ -37,7 +75,8 @@
             <option value="B">B</option>
         </select>
     </div>
-		<div class="lyrics" id="lyrics">
+    
+    <div class="lyrics" id="lyrics">
         <pre id="lyric-content">
 [Verse 1]
      C                    G
@@ -90,22 +129,22 @@ Through good times and through bad days
 He will be my Friend, my Guide
           C
 Oh, Jesus, He is the Best Friend in my life
-			</pre>
-		</div>
+        </pre>
+    </div>
 
-		<hr>
-		<h1 style="text-align: center;">YouTube</h1>
-		<div class="video-container">
-			<iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
-	        </div>
+    <hr>
+    <h1 style="text-align: center;">YouTube</h1>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+    </div>
     
-	</body>
-<script src="../../scripts/transpose.js"></script>
-	<script>
+    <script src="../scripts/transpose.js"></script>
+    <script>
         // Set default key when the page loads
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('key-select').value = 'C'; // Default key
             changeKey(); // Initialize with default key
         });
     </script>
+</body>
 </html>
