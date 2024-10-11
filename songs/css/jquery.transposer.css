@@ -19,7 +19,8 @@ span.c {
 	font: normal 11px sans-serif;
 }
 .transpose-keys a { 
-	display: block;
+	display: flex;
+    	justify-content: center;
 	float: left;
 	width: 2.25em;
 	text-align: center;
