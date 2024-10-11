@@ -13,14 +13,14 @@ const chordMap = {
     'B': ['B', 'F#', 'G#m', 'E', 'B/D#']
 };
 
-// Original chords in the lyrics, including variations if necessary
-const originalChords = ['C', 'G', 'Am', 'F', 'C/E'];
+let originalLyrics = ''; // Initialize empty variable to hold lyrics
 
 function changeKey() {
     const keySelect = document.getElementById('key-select');
     const selectedKey = keySelect.value;
 
-    let transposedLyrics = document.getElementById('lyric-content').textContent;
+    // Reset lyrics to original
+    let transposedLyrics = originalLyrics;
 
     originalChords.forEach((chord, index) => {
         const regex = new RegExp(`\\b${chord}\\b`, 'g');
