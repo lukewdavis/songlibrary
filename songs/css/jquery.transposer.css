@@ -13,7 +13,7 @@ span.c {
   
   .transpose-keys a { 
 	display: block;
-	width: calc(11.1% - 0.5em); /* 9 links per row */
+	width: 2.25em; /* Default width */
 	text-align: center;
 	margin: 0 .25em .25em 0;
 	color: #333;
@@ -30,11 +30,15 @@ span.c {
 	color: #FFF;
   }
   
-  /* Responsive styles */
-  @media (max-width: 600px) {
-	.transpose-keys a {
-	  width: calc(11.1% - 0.5em); /* Maintain 9 links per row */
-	  margin: 0.5em 0; /* Adjust margin for vertical spacing */
+ /* Responsive styles */
+@media (max-width: 600px) {
+	.transpose-keys {
+		flex-direction: row; /* Keep links in a row */
+		flex-wrap: wrap; /* Allow wrapping of links */
 	}
-  }
-  
+
+	.transpose-keys a {
+		width: calc(50% - 0.5em); /* Two links per row */
+		margin: 0.25em; /* Adjust margin for spacing */
+	}
+}
