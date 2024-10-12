@@ -39,8 +39,6 @@ span.c {
   
 	.transpose-keys a {
 	  width: 30%; /* Make links wider on mobile */
-	  max-width: 200px; /* Optional max width */
-	  margin: 0.5em 0; /* Adjust margin for vertical spacing */
 	}
   }
   
