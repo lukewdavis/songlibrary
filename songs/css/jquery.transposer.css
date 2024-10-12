@@ -13,7 +13,7 @@ span.c {
   
   .transpose-keys a { 
 	display: block;
-	width: 2.25em; /* Default width */
+	width: calc(11.1% - 0.5em); /* 9 links per row */
 	text-align: center;
 	margin: 0 .25em .25em 0;
 	color: #333;
@@ -32,14 +32,8 @@ span.c {
   
   /* Responsive styles */
   @media (max-width: 600px) {
-	.transpose-keys {
-	  flex-direction: column; /* Stack links vertically on small screens */
-	  align-items: center; /* Center align items */
-	}
-  
 	.transpose-keys a {
-	  width: 80%; /* Make links wider on mobile */
-	  max-width: 200px; /* Optional max width */
+	  width: calc(11.1% - 0.5em); /* Maintain 9 links per row */
 	  margin: 0.5em 0; /* Adjust margin for vertical spacing */
 	}
   }
