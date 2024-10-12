@@ -1,18 +1,19 @@
 span.c { 
-  font-weight: bold; 
-  color: #2159D6;
-}
-
-.transpose-keys {
+	font-weight: bold; 
+	color: #2159D6;
+  }
+  
+  .transpose-keys {
 	margin: 10px 0;
 	overflow: auto;
 	display: flex;
-    	justify-content: center;
-}
-.transpose-keys a { 
+	flex-wrap: wrap; /* Allow wrapping of links */
+	justify-content: center;
+  }
+  
+  .transpose-keys a { 
 	display: block;
-	float: left;
-	width: 2.25em;
+	width: 2.25em; /* Default width */
 	text-align: center;
 	margin: 0 .25em .25em 0;
 	color: #333;
@@ -21,8 +22,25 @@ span.c {
 	padding: .4em 0;
 	border: solid 1px transparent;
 	outline: none;
-}
-.transpose-keys a.selected { 
-  background: #2159D6; 
-  color: #FFF;
-}
+	transition: background 0.3s; /* Smooth background transition */
+  }
+  
+  .transpose-keys a.selected { 
+	background: #2159D6; 
+	color: #FFF;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+	.transpose-keys {
+	  flex-direction: column; /* Stack links vertically on small screens */
+	  align-items: center; /* Center align items */
+	}
+  
+	.transpose-keys a {
+	  width: 80%; /* Make links wider on mobile */
+	  max-width: 200px; /* Optional max width */
+	  margin: 0.5em 0; /* Adjust margin for vertical spacing */
+	}
+  }
+  
