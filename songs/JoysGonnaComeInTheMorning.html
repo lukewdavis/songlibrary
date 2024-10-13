@@ -9,6 +9,7 @@
 		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
 		<link rel="stylesheet" href="/songs/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
 	</head>
 
 	<body>
@@ -18,23 +19,35 @@
 <!-- 		<p style="text-align: center;"><a href="/songs/files/songtitle.pdf" class="pretty-button">Print Song</a></p> -->
 
 		<div class="lyrics">
-			<pre>
+			<pre data-key="E">
 [Verse 1]
+   E                                                   B
 I struggled with old satan's myth my life would never change.
+       B                                                  E 
 With a broken heart as things grew dark I called on Jesus name.
+       E                                                 A
 I must confess my soul is at rest satan better heed this warning.
+                                 E          B                     E
 God said it's done the victory is won and joy's gonna come in the morning.
 
 [Chorus]
+       E                                                        B
 Hallelujah I hear the voice of the Lord joy's gonna come in the morning.
+          B                                                        E
 The sun's gonna shine it's just about time joy's gonna come in the morning.
+                        E                              A
 The devil has lost this battle, he can't hold back the dawning.
+            E                        B                       E
 Weeping may endure for the night but joy's gonna come in the morning.
 
 [Verse 2]
+       E                                                          B
 You've fought the fight to stand the night the darkness seemed so long.
+    B                                                E
 You held onto the power you knew and it has made you strong.
+    E                                                A
 No stopping now by faith somehow you see the light a dawning.
+                    E         B                      E
 That eastern sky bye and bye joy's gonna come in the morning.
 			</pre>
 		</div>
@@ -43,8 +56,15 @@ That eastern sky bye and bye joy's gonna come in the morning.
 		<h1 style="text-align: center;">YouTube</h1>
 		<div class="video-container">
 			<iframe src="https://www.youtube.com/embed/nUZOrkCzI9Y?si=q4c5EjypOD98vaeW" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
-	        </div>
-    
+	    </div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
 	</body>
 
 </html>

@@ -9,39 +9,59 @@
 		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 		
 		<link rel="stylesheet" href="/songs/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
 	</head>
 
 	<body>
 		<h1 style="text-align: center; margin-bottom: 5px;">He Is Good To Me</h1>
 		<h2 style="text-align: center; margin: 5px;">Album: Through The Night</h2>
 		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;">The Perrys</h3>
-		<p style="text-align: center;"><a href="/songs/files/HeIsGoodToMe.pdf" class="pretty-button">Print Song</a></p>
+		<!-- <p style="text-align: center;"><a href="/songs/files/HeIsGoodToMe.pdf" class="pretty-button">Print Song</a></p> -->
 
 		<div class="lyrics">
-			<pre>
+			<pre data-key="G">
 [Verse 1]
+G       D#    D                  G
 I don’t worry, when skies are grey
+        D#              D                     G
 I don’t bother with the darts Satan throws my way
+        G                        F  G                         F G
 For the one who cares for sparrows and the lilies of the fields
+       G                       
 Is the one who calms the violent storms
+        D             G
 When he says peace be still
 
 [Chorus]
+G
 He’s good on the mountain
+G
 He’s good in the valley low
+     C
 He’s good in times of trouble
+       D              G
 That’s why I love him so
+G
 He’s good while I’m sleepin’
+G
 He’s good when I’m on my knees
+     C                 
 He’s good though I’m unworthy
+D              G
 He is good to me
 
 [Verse 2]
+G      D#      D           G
 In the sunshine and in the rain
+G     D#         D                  G
 He is still the king of kings who remains the same
+      G                       F  G
 He is faithful to his children
+        G                F  G
 And his promises are true
+      G           
 If he says he’ll always be there
+       D 
 That’s exactly what he’ll do
 			</pre>
 		</div>
@@ -50,7 +70,15 @@ That’s exactly what he’ll do
 		<h1 style="text-align: center;">YouTube</h1>
 		<div class="video-container">
 			<iframe src="https://www.youtube.com/embed/_D-f1xCHVUw?si=Tt7BJzWXUcXWwOGl" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
-	        </div>
+	    </div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
     
 	</body>
 

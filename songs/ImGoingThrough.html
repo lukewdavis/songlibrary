@@ -9,6 +9,7 @@
 		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
 		<link rel="stylesheet" href="/songs/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
 	</head>
 
 	<body>
@@ -18,30 +19,49 @@
 <!-- 		<p style="text-align: center;"><a href="/songs/files/songtitle.pdf" class="pretty-button">Print Song</a></p> -->
 
 		<div class="lyrics">
-			<pre>
+			<pre data-key="G">
 [Chorus]
+G                  C          G
 I'm going through, I'm going through
+G                                     D              G
 No matter what the devil throws at me I know what to do.
+G
 I'll call upon the name of the lord,
+C
 I'll pull out my shield and sword.
+G                            D          G
 Satan you can't stop me, now I'm going through.
 
 [Verse 1]
+G
 The preacher talked about the victory,
+C                                   G
 When god's children crossed the red sea.
+G
 How they walked across on dry land,
+D
 Phaorah's army drowned in the deep.
+       G
 By the time he finished preaching,
+       C         G
 It was plain to see, that god delivered,
+                       D               G
 Those before and he'll do it again for me.
 
 [Verse 2]
+        G           
 If your going through a fiery trail,
+        C                  G
 And you don't know how to pray.
+G
 Just turn your eyes toward heaven,
+    D              G
 And ask the lord today.
-He'll fill you with power trust him and believe,
+G                                  C             G
+He'll fill you with His power just trust him and believe,
+G
 He'll put a song down in your heart.
+    D                  G
 Then you can sing with me.
 			</pre>
 		</div>
@@ -50,7 +70,15 @@ Then you can sing with me.
 		<h1 style="text-align: center;">YouTube</h1>
 		<div class="video-container">
 			<iframe src="https://www.youtube.com/embed/bcfG2BDkfz0?si=CX7ijDZJYovEeUuM" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
-	        </div>
+	    </div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
     
 	</body>
 

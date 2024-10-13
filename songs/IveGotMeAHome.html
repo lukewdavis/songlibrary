@@ -9,6 +9,7 @@
 		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
 		<link rel="stylesheet" href="/songs/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
 	</head>
 
 	<body>
@@ -18,31 +19,49 @@
 <!-- 		<p style="text-align: center;"><a href="/songs/files/songtitle.pdf" class="pretty-button">Print Song</a></p> -->
 
 		<div class="lyrics">
-			<pre>
+			<pre data-key="E">
 [Verse 1]
+E
 I’ve got me a home, I’ve got me a home
+E                              B
 I’ve got me a home not made by hands
+E                               A
 I’ve got me a home in Heaven on high
+E                      B          E
 I’ve got me a home way beyond the sky
  
 [Verse 2]
+E
 I’m gonna see my Lord, I’m gonna see my Lord
+E                                 B
 See the one who bled and died for me
+      E            
 Gonna fall down at His feet
+              A                 E
 Thank Him for all He’s done for me
+E                 B          E
 Gonna see my Lord when I get home
 
 [Verse 3]
+      E
 Gonna worship Him all day long
+          E                      B
 I’m gonna worship Him with a new song
+          E      
 I’m gonna worship all day long
+      A                 E
 As we gather ‘round the throne
+       E              B      E
 Gonna worship Him when I get home
 
 [Verse 4]
-I’m gonna walk those streets of gold
+E 
+Gonna walk those streets, those streets of gold
+          E                             B
 I’m gonna walk those golden streets someday
+        E                               A         E
 I’m gonna walk those streets of gold as eternity rolls
+                     E                  B       E
 I’m gonna walk those golden streets when I get home
 			</pre>
 		</div>
@@ -51,7 +70,15 @@ I’m gonna walk those golden streets when I get home
 		<h1 style="text-align: center;">YouTube</h1>
 		<div class="video-container">
 			<iframe src="https://www.youtube.com/embed/VrHD1kMlYwc?si=PuN53B-U7ssfeo4c" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
-	        </div>
+	    </div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
     
 	</body>
 

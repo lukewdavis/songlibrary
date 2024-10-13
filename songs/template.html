@@ -9,6 +9,7 @@
 		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
 		<link rel="stylesheet" href="/songs/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
 	</head>
 
 	<body>
@@ -16,25 +17,8 @@
 		<h2 style="text-align: center; margin: 5px;">Album</h2>
 		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;">Author(s)</h3>
 
-		<div class="dropdown-container">
-		<label for="key-select">Key:</label>
-			<select id="key-select" onchange="changeKey()">
-			    <option value="C">C</option>
-			    <option value="C#">C#</option>
-			    <option value="D">D</option>
-			    <option value="D#">D#</option>
-			    <option value="E">E</option>
-			    <option value="F">F</option>
-			    <option value="F#">F#</option>
-			    <option value="G">G</option>
-			    <option value="G#">G#</option>
-			    <option value="A">A</option>
-			    <option value="A#">A#</option>
-			    <option value="B">B</option>
-			</select>
-	    	</div>
 		<div class="lyrics">
-			<pre>
+			<pre data-key="????">
 [Chorus]
 D      C         G      D
 Insert verse one lyrics here
@@ -48,9 +32,14 @@ Insert chorus lyrics here
 		<h1 style="text-align: center;">YouTube</h1>
 		<div class="video-container">
 			<iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
-	        </div>
-    
-	</body>
+		</div>
 
-	<script src="../scripts/transpose.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
+	</body>
 </html>

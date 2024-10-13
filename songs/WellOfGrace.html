@@ -10,32 +10,45 @@
 		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 
 		<link rel="stylesheet" href="/songs/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
 	</head>
 
 	<body>
 		<h1 style="text-align: center; margin-bottom: 5px;">Well of Grace</h1>
 		<h2 style="text-align: center; margin: 5px;">Album: Hallelujah</h2>
 		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;">The Greenes</h3>
-		<p style="text-align: center;"><a href="/songs/files/WellOfGrace.pdf" class="pretty-button">Print Song</a></p>
+		<!-- <p style="text-align: center;"><a href="/songs/files/WellOfGrace.pdf" class="pretty-button">Print Song</a></p> -->
 
 		<div class="lyrics">
-			<pre>
+			<pre data-key="G">
 [Chorus]
+      G  
 Oh, I keep comin' back to the Well of Grace,
-great is its power, sweet is its taste.
+D                   C
+Great is its power, sweet is its taste.
+    G                
 Whenever temptations and trials I face,
+  D           C           G
 I keep comin' back to the Well.
         
 [Verse 1]
+G 
 Jesus made a well at Calvary
+    D                       C                  
 for healing, cleansing, and victory.
+         G 
 How it's joy overflows, no tongue can tell.
+  D      C          G
 I thank God for the well.
         
 [Verse 2]
+G
 Blessed is the fountain in a barren land
+      D                         C
 that satisfies the thirst of the inner man.
+   G                            
 No better place could be found to dwell.
+    D         C            G
 Oh, won't you come to the well?
 			</pre>
 		</div>
@@ -45,7 +58,15 @@ Oh, won't you come to the well?
 		
 		<div class="video-container">
 			<iframe src="https://www.youtube.com/embed/5cb3Xf-KelI?si=P7zj_XREot6F9lUK" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
-	        </div>
+	    </div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
     
 	</body>
 
