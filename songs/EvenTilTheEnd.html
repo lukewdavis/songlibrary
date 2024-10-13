@@ -88,29 +88,32 @@ Oh, Jesus, He's the Best Friend in my Life
     </script>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
         const miniPlayer = document.getElementById('miniPlayer');
         let isDragging = false;
         let offsetX, offsetY;
     
         miniPlayer.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
-        offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
-        miniPlayer.style.cursor = 'grabbing';
+            isDragging = true;
+            offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
+            offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
+            miniPlayer.style.cursor = 'grabbing';
         });
     
         document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
+            if (isDragging) {
             miniPlayer.style.left = `${e.clientX - offsetX}px`;
             miniPlayer.style.top = `${e.clientY - offsetY}px`;
-        }
+            }
         });
     
         document.addEventListener('mouseup', () => {
-        isDragging = false;
-        miniPlayer.style.cursor = 'move';
+            isDragging = false;
+            miniPlayer.style.cursor = 'move';
         });
-  </script>
+        });
+    </script>
+  
   
 </body>
 </html>
