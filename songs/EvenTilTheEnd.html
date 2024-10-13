@@ -75,16 +75,42 @@ Oh, Jesus, He's the Best Friend in my Life
 
     <hr>
     <h1 style="text-align: center;">YouTube</h1>
-    <div class="video-container">
+    <div id="miniplayer" class="mini-player">
         <iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
     </div>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-      <script type="text/javascript" src="scripts/jquery.transposer.js"></script>
-      <script type="text/javascript">
+    <script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+    <script type="text/javascript">
         $(function() {
         	$("pre").transpose();
         });
     </script>
+
+    <script>
+        const miniPlayer = document.getElementById('miniPlayer');
+        let isDragging = false;
+        let offsetX, offsetY;
+    
+        miniPlayer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
+        offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
+        miniPlayer.style.cursor = 'grabbing';
+        });
+    
+        document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            miniPlayer.style.left = `${e.clientX - offsetX}px`;
+            miniPlayer.style.top = `${e.clientY - offsetY}px`;
+        }
+        });
+    
+        document.addEventListener('mouseup', () => {
+        isDragging = false;
+        miniPlayer.style.cursor = 'move';
+        });
+  </script>
+  
 </body>
 </html>
