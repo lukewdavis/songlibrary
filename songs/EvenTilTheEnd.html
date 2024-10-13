@@ -76,6 +76,7 @@ Oh, Jesus, He's the Best Friend in my Life
     <hr>
     <h1 style="text-align: center;">YouTube</h1>
     <div id="miniPlayer" class="mini-player">
+        <div class="overlay"></div>
         <iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
     </div>
 
@@ -87,37 +88,41 @@ Oh, Jesus, He's the Best Friend in my Life
         });
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const miniPlayer = document.getElementById('miniPlayer');
-            const iframe = miniPlayer.querySelector('iframe');
-            let isDragging = false;
-            let offsetX, offsetY;
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const miniPlayer = document.getElementById('miniPlayer');
+        const overlay = miniPlayer.querySelector('.overlay');
+        const iframe = miniPlayer.querySelector('iframe');
+        let isDragging = false;
+        let offsetX, offsetY;
 
-            miniPlayer.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
-                offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
-                miniPlayer.style.cursor = 'grabbing';
-                iframe.style.pointerEvents = 'none';  // Disable video interaction while dragging
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    miniPlayer.style.left = `${e.clientX - offsetX}px`;
-                    miniPlayer.style.top = `${e.clientY - offsetY}px`;
-                }
-            });
-
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-                miniPlayer.style.cursor = 'move';
-                iframe.style.pointerEvents = 'auto';  // Re-enable video interaction when drag stops
-            });
+        // Start dragging
+        overlay.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
+            offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
+            miniPlayer.style.cursor = 'grabbing';
+            overlay.style.pointerEvents = 'none';  // Disable overlay to allow interaction with the iframe
+            iframe.style.pointerEvents = 'none';   // Disable iframe interaction during drag
         });
-    </script>
 
-  
+        // Moving the player
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                miniPlayer.style.left = `${e.clientX - offsetX}px`;
+                miniPlayer.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        // Stop dragging
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            miniPlayer.style.cursor = 'move';
+            overlay.style.pointerEvents = 'auto';  // Re-enable overlay
+            iframe.style.pointerEvents = 'auto';   // Re-enable iframe interaction
+        });
+    });
+</script>
   
 </body>
 </html>
