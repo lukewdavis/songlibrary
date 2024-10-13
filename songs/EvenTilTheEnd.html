@@ -7,26 +7,6 @@
     <link rel="icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/songs/css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
-    <style>
-        .mini-player {
-            position: absolute;
-            width: 320px; /* You can adjust the size */
-            height: 180px; /* You can adjust the size */
-            top: 100px; /* Initial position */
-            left: 100px; /* Initial position */
-            border: 2px solid #000; /* Border for visibility */
-            cursor: move; /* Change cursor to move when hovering */
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            cursor: move; /* Change cursor to indicate draggable area */
-        }
-    </style>
 </head>
 <body>
     <h1 style="text-align: center; margin-bottom: 5px;">Even Til' the End</h1>
@@ -51,6 +31,7 @@ Without Him, Where would I be
      F      G7                 C      Bb/C
 Oh Jesus, What a friend is He		
 
+
 [Chorus]
 C/E  F                             F/G
 For, He is the Rock upon which I stand
@@ -73,6 +54,7 @@ And He Promised He'd go with me always
 G            C
 Even til the end
 
+
 [Verse 2]
     C       Em                  F
 And just as long as this world stands
@@ -93,47 +75,48 @@ Oh, Jesus, He's the Best Friend in my Life
 
     <hr>
     <h1 style="text-align: center;">YouTube</h1>
-    <div id="miniplayer" class="mini-player">
-        <iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+    <div id="miniPlayer" class="mini-player">
         <div class="overlay"></div>
+        <iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
     </div>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.transposer.js"></script>
     <script type="text/javascript">
         $(function() {
-            $("pre").transpose();
+        	$("pre").transpose();
         });
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const miniPlayer = document.getElementById('miniplayer');
-            const overlay = miniPlayer.querySelector('.overlay');
+            const miniPlayer = document.getElementById('miniPlayer');
+            const iframe = miniPlayer.querySelector('iframe');
             let isDragging = false;
             let offsetX, offsetY;
-    
-            overlay.addEventListener('mousedown', (e) => {
+
+            miniPlayer.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
                 offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
-                overlay.style.pointerEvents = 'none'; // Disable overlay to allow clicks on the video
                 miniPlayer.style.cursor = 'grabbing';
+                iframe.style.pointerEvents = 'none';  // Disable video interaction while dragging
             });
-    
+
             document.addEventListener('mousemove', (e) => {
                 if (isDragging) {
                     miniPlayer.style.left = `${e.clientX - offsetX}px`;
                     miniPlayer.style.top = `${e.clientY - offsetY}px`;
                 }
             });
-    
+
             document.addEventListener('mouseup', () => {
                 isDragging = false;
-                overlay.style.pointerEvents = 'auto'; // Re-enable overlay for clicking on the video
                 miniPlayer.style.cursor = 'move';
+                iframe.style.pointerEvents = 'auto';  // Re-enable video interaction when drag stops
             });
         });
     </script>
+  
 </body>
 </html>
