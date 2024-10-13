@@ -89,30 +89,34 @@ Oh, Jesus, He's the Best Friend in my Life
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        const miniPlayer = document.getElementById('miniPlayer');
-        let isDragging = false;
-        let offsetX, offsetY;
-    
-        miniPlayer.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
-            offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
-            miniPlayer.style.cursor = 'grabbing';
-        });
-    
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-            miniPlayer.style.left = `${e.clientX - offsetX}px`;
-            miniPlayer.style.top = `${e.clientY - offsetY}px`;
-            }
-        });
-    
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-            miniPlayer.style.cursor = 'move';
-        });
+            const miniPlayer = document.getElementById('miniPlayer');
+            const iframe = miniPlayer.querySelector('iframe');
+            let isDragging = false;
+            let offsetX, offsetY;
+
+            miniPlayer.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
+                offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
+                miniPlayer.style.cursor = 'grabbing';
+                iframe.style.pointerEvents = 'none';  // Disable video interaction while dragging
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    miniPlayer.style.left = `${e.clientX - offsetX}px`;
+                    miniPlayer.style.top = `${e.clientY - offsetY}px`;
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                miniPlayer.style.cursor = 'move';
+                iframe.style.pointerEvents = 'auto';  // Re-enable video interaction when drag stops
+            });
         });
     </script>
+
   
   
 </body>
