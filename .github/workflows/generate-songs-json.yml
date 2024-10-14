@@ -11,26 +11,27 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to the latest version
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Updated to the latest version
         with:
-          node-version: '14'  # Use the desired Node.js version
+          node-version: '16'  # Use Node.js version 16
 
+      # Only include this step if you have dependencies to install
       - name: Install dependencies
         run: |
           npm install
 
-      - name: Run script to generate songs.json
-        run: node scripts/generateSongsJson.js
+      - name: Run generateSongsJson
+        run: node ./scripts/generateSongsJson.js
 
       - name: Commit and push changes
         run: |
           git config --local user.email "huntertrapperluke@gmail.com"
           git config --local user.name "lukewdavis"
           git add songs.json
-          git commit -m "Update songs.json"
+          git commit -m "Update songs.json" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
