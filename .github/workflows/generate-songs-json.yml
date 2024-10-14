@@ -20,13 +20,16 @@ jobs:
 
       - name: Create package.json
         run: |
-          cd scripts  # Change to the directory where you want the package.json
-          npm init -y  # Automatically generate a package.json with default values
+          if [ ! -f package.json ]; then
+            npm init -y 
+          fi
 
       - name: Install dependencies
         run: |
-          cd scripts
           npm install
+
+      - name: List files in scripts directory
+        run: ls -l scripts/
 
       - name: Run generateSongsJson
         run: node ./scripts/generateSongsJson.js  # Adjust path if necessary
