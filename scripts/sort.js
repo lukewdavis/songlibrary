@@ -12,6 +12,8 @@ function sortList() {
             txtValueA = a.textContent || a.innerText;
             txtValueB = b.textContent || b.innerText;
 
+            console.log(`Comparing "${txtValueA}" with "${txtValueB}"`);
+
             if (txtValueA.toLowerCase() > txtValueB.toLowerCase()) {
                 shouldSwitch = true;
                 break;
