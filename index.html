@@ -33,33 +33,14 @@
         <input type="text" id="songSearch" onkeyup="songSearch()" placeholder="Search for songs...">
     </div>
 
-    <ul id="songList">
-        <li><a href="songs/WellOfGrace.html">Well Of Grace - The Greenes</a></li>
-        <li><a href="songs/FixItMan.html">Fix It Man - Bill Houston</a></li>
-        <li><a href="songs/HeIsGoodToMe.html">He Is Good To Me - The Perrys</a></li>
-        <li><a href="songs/IThankGodForGrace.html">I Thank God For Grace - The Whisnants</a></li>
-        <li><a href="songs/TwoCoats.html">Two Coats - HighRoad</a></li>
-        <li><a href="songs/TheresAManInHere.html">There's A Man In Here - The Primitive Quartet</a></li>
-        <li><a href="songs/LittleGrainOfSand.html">Little Grain Of Sand - Easter Brothers</a></li>
-        <li><a href="songs/TakeYourShoesOffMoses.html">Take Your Shoes Off Moses - Ralph Stanley</a></li>
-        <li><a href="songs/MakeHimASoldier.html">I Promised the Lord I'd Make Him a Soldier</a></li>
-        <li><a href="songs/JesusBuiltABridgeToHeaven.html">Jesus Built a Bridge to Heaven - Rhonda Vincent</a></li>
-        <li><a href="songs/TheresBeenAChangeInMe.html">There's Been a Change in Me - The Paynes</a></li>
-        <li><a href="songs/TwelveGatesToTheCity.html">Twelve Gates to the City - The Perrys</a></li>
-        <li><a href="songs/TwelveGatesToTheCity-2.html">Twelve Gates to the City - Buddy Greene</a></li>
-        <li><a href="songs/HeCameLookingForMe.html">He Came Looking For Me - The Crabb Family</a></li>
-        <li><a href="songs/EvenTilTheEnd.html">Even Til' the End - The Lindseys</a></li>
-        <li><a href="songs/JoysGonnaComeInTheMorning.html">Joy's Gonna Come In The Morning - The Crist Family</a></li>
-        <li><a href="songs/TellTheGrave.html">Tell the Grave - The Perrys</a></li>
-        <li><a href="songs/IllTakeTheOldHighway.html">I'll Take the Old Highway - The Carr Family</a></li>
-        <li><a href="songs/IPlayedInTheBand.html">I Played in the Band and Sang in the Choir - The Booth Brothers</a></li>
-        <li><a href="songs/ImGoingThrough.html">I'm Going Through - The McKameys</a></li>
-        <li><a href="songs/IveGotMeAHome.html">I've Got Me a Home - The Reggie Saddler Family</a></li>
-        <li><a href="songs/JesusIsARock.html">Jesus Is A Rock - Buddy Greene</a></li>
-        <li><a href="songs/HallelujahSide.html">The Hallelujah Side - The Trio</a></li>
-    </ul>		
+    <ul id="songList"></ul>		
     
     <script type="text/javascript" src="scripts/sort.js"></script>
 	<script type="text/javascript" src="scripts/search.js"></script>
+
+    <script src="scripts/populateSongsList.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', populateSongList);
+    </script>
 </body>
 </html>
