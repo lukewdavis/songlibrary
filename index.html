@@ -7,13 +7,11 @@
     <link rel="icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
         .menu {
             background-color: #333;
             overflow: hidden;
         }
+
         .menu a {
             float: left;
             display: block;
@@ -22,13 +20,16 @@
             padding: 14px 16px;
             text-decoration: none;
         }
+
         .menu a:hover {
             background-color: #575757;
         }
+
         .dropdown {
             float: left;
             overflow: hidden;
         }
+
         .dropdown .dropbtn {
             cursor: pointer;
             border: none;
@@ -40,6 +41,7 @@
             font-size: inherit;
             margin: 0;
         }
+
         .dropdown-content {
             display: none;
             position: absolute;
@@ -47,6 +49,7 @@
             min-width: 160px;
             z-index: 1;
         }
+
         .dropdown-content a {
             float: none;
             color: black;
@@ -55,9 +58,11 @@
             display: block;
             text-align: left;
         }
+
         .dropdown-content a:hover {
             background-color: #ddd;
         }
+		
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -65,6 +70,8 @@
 </head>
 
 <body onload="sortList()">
+	<h1 style="text-align: center;">The Song Library</h1>
+
     <div class="menu">
         <a href="index.html">Home</a>
         <div class="dropdown">
@@ -84,8 +91,6 @@
             </div>
         </div>
     </div>
-
-    <h1 style="text-align: center;">The Song Library</h1>
 
     <div style="height: 3rem;">
         <input type="text" id="songSearch" onkeyup="songSearch()" placeholder="Search for songs...">
@@ -117,51 +122,7 @@
         <li><a href="songs/HallelujahSide.html">The Hallelujah Side - The Trio</a></li>
     </ul>		
     
-    <script>
-        function songSearch() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById('songSearch');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("songList");
-            li = ul.getElementsByTagName('li');
-
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-
-        function sortList() {
-            var ul, li, switching, i, shouldSwitch, txtValueA, txtValueB;
-            ul = document.getElementById("songList");
-            li = ul.getElementsByTagName('li');
-            switching = true;
-
-            while (switching) {
-                switching = false;
-                for (i = 0; i < li.length - 1; i++) {
-                    var a = li[i].getElementsByTagName("a")[0];
-                    var b = li[i + 1].getElementsByTagName("a")[0];
-                    txtValueA = a.textContent || a.innerText;
-                    txtValueB = b.textContent || b.innerText;
-
-                    if (txtValueA.toLowerCase() > txtValueB.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-
-                if (shouldSwitch) {
-                    li[i].parentNode.insertBefore(li[i + 1], li[i]);
-                    switching = true;
-                }
-            }
-        }
-    </script>
+    <script type="text/javascript" src="scripts/sort.js"></script>
+	<script type="text/javascript" src="scripts/search.js"></script>
 </body>
 </html>
