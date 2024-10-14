@@ -27,15 +27,15 @@ fs.readdir(songsDir, (err, files) => {
             
             // Use the specific IDs to extract information
             const title = $('#title').text().trim(); // Extract title using ID
-            const album = $('#album').text().trim(); // Extract album using ID
-            const artist = $('#author').text().trim(); // Extract author using ID
+            const album = $('#album').text().replace('Album: ', '').trim(); // Trim "Album: " from album
+            const artist = $('#artist').text().trim(); // Extract artist using ID
 
             // Push the song details into the songs array
             songs.push({
                 file: file,
                 title: title,
                 album: album,
-                artist: artist
+                artist: artist // Updated key to artist
             });
         }
     });
