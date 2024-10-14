@@ -4,7 +4,7 @@ function sortList() {
     li = ul.getElementsByTagName('li');
     switching = true;
 
-    console.log("HERE");
+    console.log("Sorting is not working because populateSongs has not completed");
 
     while (switching) {
         switching = false;
