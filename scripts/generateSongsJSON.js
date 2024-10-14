@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 
 // Directory containing song files
 const songsDir = './songs'; // Adjust path if necessary
-const outputFilePath = path.join(__dirname, 'songs.json');
+const outputFilePath = path.join(__dirname, '../songs/', 'songs.json');
 
 // Array to hold song details
 const songs = [];

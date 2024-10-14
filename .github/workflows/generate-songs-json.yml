@@ -47,7 +47,7 @@ jobs:
         run: |
           git config --local user.email "huntertrapperluke@gmail.com"
           git config --local user.name "lukewdavis"
-          git add songs.json
+          git add ./songs/songs.json
           git commit -m "Update songs.json" || echo "No changes to commit"
           git push
         env:
