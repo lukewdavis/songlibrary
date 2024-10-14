@@ -25,6 +25,24 @@ jobs:
       - name: Run generateSongsJson
         run: node ./scripts/generateSongsJSON.js
 
+      - name: List files in scripts directory
+        run: ls -l scripts/
+
+      - name: List files in main directory
+        run: ls -l
+      
+      - name: List files in main directory
+        run: ls -l songs/
+
+      - name: Check for songs.json
+        run: |
+          if [ -f songs.json ]; then
+            echo "songs.json exists."
+          else
+            echo "songs.json does not exist."
+            exit 1
+          fi
+
       - name: Commit and push changes
         run: |
           git config --local user.email "huntertrapperluke@gmail.com"
