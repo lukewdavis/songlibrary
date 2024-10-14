@@ -4,6 +4,8 @@ function sortList() {
     li = ul.getElementsByTagName('li');
     switching = true;
 
+    console.log("HERE");
+
     while (switching) {
         switching = false;
         for (i = 0; i < li.length - 1; i++) {
