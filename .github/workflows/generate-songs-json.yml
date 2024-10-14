@@ -11,20 +11,25 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated to the latest version
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # Updated to the latest version
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Use Node.js version 16
+          node-version: '16'
 
-      # Only include this step if you have dependencies to install
+      - name: Create package.json
+        run: |
+          cd scripts  # Change to the directory where you want the package.json
+          npm init -y  # Automatically generate a package.json with default values
+
       - name: Install dependencies
         run: |
+          cd scripts
           npm install
 
       - name: Run generateSongsJson
-        run: node ./scripts/generateSongsJson.js
+        run: node ./generateSongsJson.js  # Adjust path if necessary
 
       - name: Commit and push changes
         run: |
