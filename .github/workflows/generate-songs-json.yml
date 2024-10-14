@@ -32,11 +32,11 @@ jobs:
         run: ls -l
       
       - name: List files in main directory
-        run: ls -l songs/
+        run: ls -l songs/ | grep "songs.json" || echo "songs.json does not exist."
 
       - name: Check for songs.json
         run: |
-          if [ -f songs.json ]; then
+          if [ -f ./songs/songs.json ]; then
             echo "songs.json exists."
           else
             echo "songs.json does not exist."
