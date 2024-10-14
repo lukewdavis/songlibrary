@@ -30,9 +30,6 @@ jobs:
 
       - name: List files in main directory
         run: ls -l
-      
-      - name: List files in main directory
-        run: ls -l songs/ | grep "songs.json" || echo "songs.json does not exist."
 
       - name: Check for songs.json
         run: |
@@ -47,8 +44,7 @@ jobs:
         run: |
           git config --local user.email "huntertrapperluke@gmail.com"
           git config --local user.name "lukewdavis"
-          git add ./songs/songs.json
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/lukewdavis/songlibrary.git
+          git add songs/songs.json
           git commit -m "Update songs.json" || echo "No changes to commit"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
