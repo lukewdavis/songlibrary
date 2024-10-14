@@ -1,0 +1,36 @@
+name: Generate Songs JSON
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Use the desired Node.js version
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run script to generate songs.json
+        run: node scripts/generateSongsJson.js
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "huntertrapperluke@gmail.com"
+          git config --local user.name "lukewdavis"
+          git add songs.json
+          git commit -m "Update songs.json"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
