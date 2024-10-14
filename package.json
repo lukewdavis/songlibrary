@@ -1,19 +1,18 @@
 {
-    "name": "songlibrary",
+    "name": "song-library",
     "version": "1.0.0",
-    "description": "A library for managing song data.",
-    "main": "index.js",
+    "description": "A library for managing songs",
+    "main": "scripts/generateSongsJSON.js",
     "scripts": {
-      "start": "node ./scripts/generateSongsJSON.js"
+      "start": "node scripts/generateSongsJSON.js"
     },
     "dependencies": {
-      "cheerio": "^1.0.0-rc.5",
-      "undici": "^4.0.0"
+      "cheerio": "^1.0.0-rc.10"
     },
     "engines": {
-      "node": ">=14.0.0 <16.0.0"
+      "node": ">=16.0.0"
     },
     "author": "Your Name",
-    "license": "MIT"
+    "license": "ISC"
   }
   
