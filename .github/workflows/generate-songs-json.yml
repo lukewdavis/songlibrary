@@ -16,20 +16,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '14'  # Downgraded to Node.js 14
 
       - name: Create package.json
         run: |
-          if [ ! -f package.json ]; then
-            npm init -y  # Automatically generate a package.json with default values
-          fi
+          npm init -y  # Automatically generate a package.json with default values
 
       - name: Install dependencies
         run: |
           npm install cheerio
+          npm install
 
-      - name: Run generateSongsJSON
-        run: node ./scripts/generateSongsJSON.js
+      - name: Run generateSongsJson
+        run: node ./scripts/generateSongsJSON.js  # Adjust path if necessary
 
       - name: Commit and push changes
         run: |
