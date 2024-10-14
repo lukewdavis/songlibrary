@@ -4,7 +4,7 @@ async function populateSongList() {
         
         // Log the response for debugging
         const text = await response.text();
-        console.log('Response:', text);
+        // console.log('Response:', text);
         
         const songs = JSON.parse(text);
         const songList = document.getElementById('songList');
