@@ -36,12 +36,6 @@
     "artist": "The Booth Brothers"
   },
   {
-    "file": "IThankGodForGrace.html",
-    "title": "Thank God for Grace",
-    "album": "New Day Dawning",
-    "artist": "The Whisnants"
-  },
-  {
     "file": "IllTakeTheOldHighway.html",
     "title": "I'll Take the Old Highway",
     "album": "For All He's Done",
@@ -100,6 +94,12 @@
     "title": "Tell the Grave",
     "album": "John 3:16",
     "artist": "The Perrys"
+  },
+  {
+    "file": "ThankGodForGrace.html",
+    "title": "Thank God for Grace",
+    "album": "New Day Dawning",
+    "artist": "The Whisnants"
   },
   {
     "file": "TheresAManInHere.html",
