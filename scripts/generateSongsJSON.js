@@ -24,16 +24,18 @@ fs.readdir(songsDir, (err, files) => {
             const content = fs.readFileSync(filePath, 'utf-8'); // Read file content synchronously
 
             const $ = cheerio.load(content); // Load content into cheerio
-            const title = $('h1').text().trim(); // Extract title from <h1>
-            const album = $('h2').text().replace('Album:', '').trim(); // Extract album from <h2>
-            const author = $('h3').text().trim(); // Extract author from <h3>
+            
+            // Use the specific IDs to extract information
+            const title = $('#title').text().trim(); // Extract title using ID
+            const album = $('#album').text().trim(); // Extract album using ID
+            const artist = $('#author').text().trim(); // Extract author using ID
 
             // Push the song details into the songs array
             songs.push({
                 file: file,
                 title: title,
                 album: album,
-                author: author
+                artist: artist
             });
         }
     });
