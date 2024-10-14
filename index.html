@@ -1,102 +1,167 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<title>Song Library</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Library</title>
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .menu {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .menu a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .menu a:hover {
+            background-color: #575757;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
 
-		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+<body onload="sortList()">
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Resources</button>
+            <div class="dropdown-content">
+                <a href="#">Resource 1</a>
+                <a href="#">Resource 2</a>
+                <a href="#">Resource 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Online Resources</button>
+            <div class="dropdown-content">
+                <a href="#">Online Resource 1</a>
+                <a href="#">Online Resource 2</a>
+                <a href="#">Online Resource 3</a>
+            </div>
+        </div>
+    </div>
 
-		<link rel="stylesheet" href="css/styles.css">
-	</head>
+    <h1 style="text-align: center;">The Song Library</h1>
 
-	<body onload="sortList()">
-		<h1 style="text-align: center;">The Song Library</h1>
-		
-		<div style="height: 3rem;">
-			<input type="text" id="songSearch" onkeyup="songSearch()" placeholder="Search for songs...">
-		</div>
+    <div style="height: 3rem;">
+        <input type="text" id="songSearch" onkeyup="songSearch()" placeholder="Search for songs...">
+    </div>
 
-		<ul id="songList">
-			<li><a href="songs/WellOfGrace.html">Well Of Grace - The Greenes</a></li>
-			<li><a href="songs/FixItMan.html">Fix It Man - Bill Houston</a></li>
-			<li><a href="songs/HeIsGoodToMe.html">He Is Good To Me - The Perrys</a></li>
-			<li><a href="songs/IThankGodForGrace.html">I Thank God For Grace - The Whisnants</a></li>
-			<li><a href="songs/TwoCoats.html">Two Coats - HighRoad</a></li>
-			<li><a href="songs/TheresAManInHere.html">There's A Man In Here - The Primitive Quartet</a></li>
-			<li><a href="songs/LittleGrainOfSand.html">Little Grain Of Sand - Easter Brothers</a></li>
-			<li><a href="songs/TakeYourShoesOffMoses.html">Take Your Shoes Off Moses - Ralph Stanley</a></li>
-			<li><a href="songs/MakeHimASoldier.html">I Promised the Lord I'd Make Him a Soldier</a></li>
-			<li><a href="songs/JesusBuiltABridgeToHeaven.html">Jesus Built a Bridge to Heaven - Rhonda Vincent</a></li>
-			<li><a href="songs/TheresBeenAChangeInMe.html">There's Been a Change in Me - The Paynes</a></li>
-			<li><a href="songs/TwelveGatesToTheCity.html">Twelve Gates to the City - The Perrys</a></li>
-			<li><a href="songs/TwelveGatesToTheCity-2.html">Twelve Gates to the City - Buddy Greene</a></li>
-			<li><a href="songs/HeCameLookingForMe.html">He Came Looking For Me - The Crabb Family</a></li>
-			<li><a href="songs/EvenTilTheEnd.html">Even Til' the End - The Lindseys</a></li>
-			<li><a href="songs/JoysGonnaComeInTheMorning.html">Joy's Gonna Come In The Morning - The Crist Family</a></li>
-			<li><a href="songs/TellTheGrave.html">Tell the Grave - The Perrys</a></li>
-			<li><a href="songs/IllTakeTheOldHighway.html">I'll Take the Old Highway - The Carr Family</a></li>
-			<li><a href="songs/IPlayedInTheBand.html">I Played in the Band and Sang in the Choir - The Booth Brothers</a></li>
-			<li><a href="songs/ImGoingThrough.html">I'm Going Through - The McKameys</a></li>
-			<li><a href="songs/IveGotMeAHome.html">I've Got Me a Home - The Reggie Saddler Family</a></li>
-			<li><a href="songs/JesusIsARock.html">Jesus Is A Rock - Buddy Greene</a></li>
-			<li><a href="songs/HallelujahSide.html">The Hallelujah Side - The Trio</a></li>
-		</ul>		
-	</body>
+    <ul id="songList">
+        <li><a href="songs/WellOfGrace.html">Well Of Grace - The Greenes</a></li>
+        <li><a href="songs/FixItMan.html">Fix It Man - Bill Houston</a></li>
+        <li><a href="songs/HeIsGoodToMe.html">He Is Good To Me - The Perrys</a></li>
+        <li><a href="songs/IThankGodForGrace.html">I Thank God For Grace - The Whisnants</a></li>
+        <li><a href="songs/TwoCoats.html">Two Coats - HighRoad</a></li>
+        <li><a href="songs/TheresAManInHere.html">There's A Man In Here - The Primitive Quartet</a></li>
+        <li><a href="songs/LittleGrainOfSand.html">Little Grain Of Sand - Easter Brothers</a></li>
+        <li><a href="songs/TakeYourShoesOffMoses.html">Take Your Shoes Off Moses - Ralph Stanley</a></li>
+        <li><a href="songs/MakeHimASoldier.html">I Promised the Lord I'd Make Him a Soldier</a></li>
+        <li><a href="songs/JesusBuiltABridgeToHeaven.html">Jesus Built a Bridge to Heaven - Rhonda Vincent</a></li>
+        <li><a href="songs/TheresBeenAChangeInMe.html">There's Been a Change in Me - The Paynes</a></li>
+        <li><a href="songs/TwelveGatesToTheCity.html">Twelve Gates to the City - The Perrys</a></li>
+        <li><a href="songs/TwelveGatesToTheCity-2.html">Twelve Gates to the City - Buddy Greene</a></li>
+        <li><a href="songs/HeCameLookingForMe.html">He Came Looking For Me - The Crabb Family</a></li>
+        <li><a href="songs/EvenTilTheEnd.html">Even Til' the End - The Lindseys</a></li>
+        <li><a href="songs/JoysGonnaComeInTheMorning.html">Joy's Gonna Come In The Morning - The Crist Family</a></li>
+        <li><a href="songs/TellTheGrave.html">Tell the Grave - The Perrys</a></li>
+        <li><a href="songs/IllTakeTheOldHighway.html">I'll Take the Old Highway - The Carr Family</a></li>
+        <li><a href="songs/IPlayedInTheBand.html">I Played in the Band and Sang in the Choir - The Booth Brothers</a></li>
+        <li><a href="songs/ImGoingThrough.html">I'm Going Through - The McKameys</a></li>
+        <li><a href="songs/IveGotMeAHome.html">I've Got Me a Home - The Reggie Saddler Family</a></li>
+        <li><a href="songs/JesusIsARock.html">Jesus Is A Rock - Buddy Greene</a></li>
+        <li><a href="songs/HallelujahSide.html">The Hallelujah Side - The Trio</a></li>
+    </ul>		
+    
+    <script>
+        function songSearch() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('songSearch');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("songList");
+            li = ul.getElementsByTagName('li');
 
-	<script>
-		function songSearch() {
-			// Declare variables
-			var input, filter, ul, li, a, i, txtValue;
-			input = document.getElementById('songSearch');
-			filter = input.value.toUpperCase();
-			ul = document.getElementById("songList");
-			li = ul.getElementsByTagName('li');
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
 
-			// Loop through all list items, and hide those who don't match the search query
-			for (i = 0; i < li.length; i++) {
-				a = li[i].getElementsByTagName("a")[0];
-				txtValue = a.textContent || a.innerText;
-				if (txtValue.toUpperCase().indexOf(filter) > -1) {
-					li[i].style.display = "";
-				} else {
-					li[i].style.display = "none";
-				}
-			}
-		}
+        function sortList() {
+            var ul, li, switching, i, shouldSwitch, txtValueA, txtValueB;
+            ul = document.getElementById("songList");
+            li = ul.getElementsByTagName('li');
+            switching = true;
 
-		function sortList() {
-		    var ul, li, switching, i, shouldSwitch, txtValueA, txtValueB;
-		    ul = document.getElementById("songList");
-		    li = ul.getElementsByTagName('li');
-		    switching = true;
-		
-		    // Loop until no more switching is needed
-		    while (switching) {
-		        switching = false;
-		        // Loop through all list-items
-		        for (i = 0; i < li.length - 1; i++) {
-		            var a = li[i].getElementsByTagName("a")[0];
-		            var b = li[i + 1].getElementsByTagName("a")[0];
-		            txtValueA = a.textContent || a.innerText;
-		            txtValueB = b.textContent || b.innerText;
-		
-		            if (txtValueA.toLowerCase() > txtValueB.toLowerCase()) {
-		                // Mark that a switch is needed
-		                shouldSwitch = true;
-		                break;
-		            }
-		        }
-		
-		        if (shouldSwitch) {
-		            // Switch the positions of the two items
-		            li[i].parentNode.insertBefore(li[i + 1], li[i]);
-		            switching = true; // A switch has been done
-		        }
-		    }
-		}
+            while (switching) {
+                switching = false;
+                for (i = 0; i < li.length - 1; i++) {
+                    var a = li[i].getElementsByTagName("a")[0];
+                    var b = li[i + 1].getElementsByTagName("a")[0];
+                    txtValueA = a.textContent || a.innerText;
+                    txtValueB = b.textContent || b.innerText;
 
-	</script>
+                    if (txtValueA.toLowerCase() > txtValueB.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
 
+                if (shouldSwitch) {
+                    li[i].parentNode.insertBefore(li[i + 1], li[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+</body>
 </html>

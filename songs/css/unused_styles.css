@@ -1,0 +1,23 @@
+/* Used originally for the print button */
+.pretty-button {
+    display: inline-block;
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size for the text */
+    color: #fff; /* Text color */
+    background-color: #007BFF; /* Background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+}
+
+.pretty-button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.pretty-button:active {
+    background-color: #004085; /* Even darker background when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow effect on click */
+}
+/* End print button styles */
