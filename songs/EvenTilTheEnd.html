@@ -7,6 +7,24 @@
     <link rel="icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/songs/css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .mini-player {
+            position: absolute; /* Allows free positioning */
+            top: 50px; /* Starting position */
+            left: 50px; /* Starting position */
+            border-left: 5px solid #333; /* Left border for dragging */
+            cursor: move; /* Indicate draggable */
+            user-select: none; /* Prevent text selection */
+        }
+        .mini-player iframe {
+            width: 300px; /* Set desired width */
+            height: 170px; /* Set desired height */
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <h1 style="text-align: center; margin-bottom: 5px;">Even Til' the End</h1>
@@ -31,7 +49,6 @@ Without Him, Where would I be
      F      G7                 C      Bb/C
 Oh Jesus, What a friend is He		
 
-
 [Chorus]
 C/E  F                             F/G
 For, He is the Rock upon which I stand
@@ -54,7 +71,6 @@ And He Promised He'd go with me always
 G            C
 Even til the end
 
-
 [Verse 2]
     C       Em                  F
 And just as long as this world stands
@@ -76,22 +92,20 @@ Oh, Jesus, He's the Best Friend in my Life
     <hr>
     <h1 style="text-align: center;">YouTube</h1>
     <div id="miniPlayer" class="mini-player">
-        <div class="overlay"></div>
-        <iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+        <iframe src="https://www.youtube.com/embed/r7zcclJS2_Y?si=nu0c9Bgg4ZIG9OS3" title="YouTube video player" allowfullscreen></iframe>
     </div>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.transposer.js"></script>
     <script type="text/javascript">
         $(function() {
-        	$("pre").transpose();
+            $("pre").transpose();
         });
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const miniPlayer = document.getElementById('miniPlayer');
-            const iframe = miniPlayer.querySelector('iframe');
             let isDragging = false;
             let offsetX, offsetY;
 
@@ -100,10 +114,9 @@ Oh, Jesus, He's the Best Friend in my Life
                 offsetX = e.clientX - miniPlayer.getBoundingClientRect().left;
                 offsetY = e.clientY - miniPlayer.getBoundingClientRect().top;
                 miniPlayer.style.cursor = 'grabbing';
-                iframe.style.pointerEvents = 'none';  // Disable video interaction while dragging
             });
 
-            document.addEventListener('mousemove', (e) => {
+            miniPlayer.addEventListener('mousemove', (e) => {
                 if (isDragging) {
                     miniPlayer.style.left = `${e.clientX - offsetX}px`;
                     miniPlayer.style.top = `${e.clientY - offsetY}px`;
@@ -113,10 +126,28 @@ Oh, Jesus, He's the Best Friend in my Life
             document.addEventListener('mouseup', () => {
                 isDragging = false;
                 miniPlayer.style.cursor = 'move';
-                iframe.style.pointerEvents = 'auto';  // Re-enable video interaction when drag stops
+            });
+
+            // Touch support for mobile devices
+            miniPlayer.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                offsetX = e.touches[0].clientX - miniPlayer.getBoundingClientRect().left;
+                offsetY = e.touches[0].clientY - miniPlayer.getBoundingClientRect().top;
+                miniPlayer.style.cursor = 'grabbing';
+            });
+
+            miniPlayer.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    miniPlayer.style.left = `${e.touches[0].clientX - offsetX}px`;
+                    miniPlayer.style.top = `${e.touches[0].clientY - offsetY}px`;
+                }
+            });
+
+            document.addEventListener('touchend', () => {
+                isDragging = false;
+                miniPlayer.style.cursor = 'move';
             });
         });
     </script>
-  
 </body>
 </html>
