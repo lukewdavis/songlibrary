@@ -18,17 +18,12 @@ jobs:
         with:
           node-version: '14'  # Downgraded to Node.js 14
 
-      - name: Create package.json
-        run: |
-          npm init -y  # Automatically generate a package.json with default values
-
       - name: Install dependencies
         run: |
-          npm install cheerio
           npm install
 
       - name: Run generateSongsJson
-        run: node ./scripts/generateSongsJSON.js  # Adjust path if necessary
+        run: node ./scripts/generateSongsJSON.js  # Ensure the path is correct
 
       - name: Commit and push changes
         run: |
