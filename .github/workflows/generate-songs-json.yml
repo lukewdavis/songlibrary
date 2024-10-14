@@ -32,7 +32,7 @@ jobs:
         run: ls -l scripts/
 
       - name: Run generateSongsJson
-        run: node ./scripts/generateSongsJson.js  # Adjust path if necessary
+        run: node ./scripts/generateSongsJSON.js  # Adjust path if necessary
 
       - name: Commit and push changes
         run: |
