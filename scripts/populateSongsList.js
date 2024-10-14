@@ -1,6 +1,6 @@
 async function populateSongList() {
     try {
-        const response = await fetch('/songs'); // Ensure this endpoint returns your JSON data
+        const response = await fetch('/songs/songs.json'); // Ensure this endpoint returns your JSON data
         const songs = await response.json();
         const songList = document.getElementById('songList');
 
