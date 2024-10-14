@@ -21,18 +21,15 @@ jobs:
       - name: Create package.json
         run: |
           if [ ! -f package.json ]; then
-            npm init -y 
+            npm init -y  # Automatically generate a package.json with default values
           fi
 
       - name: Install dependencies
         run: |
-          npm install
+          npm install cheerio
 
-      - name: List files in scripts directory
-        run: ls -l scripts/
-
-      - name: Run generateSongsJson
-        run: node ./scripts/generateSongsJSON.js  # Adjust path if necessary
+      - name: Run generateSongsJSON
+        run: node ./scripts/generateSongsJSON.js
 
       - name: Commit and push changes
         run: |
