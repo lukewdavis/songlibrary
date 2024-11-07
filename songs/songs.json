@@ -1,9 +1,21 @@
 [
   {
+    "file": "EnemysCamp.html",
+    "title": "Enemy's Camp Medley",
+    "album": "Songs of Revival",
+    "artist": "Lindell Cooley"
+  },
+  {
     "file": "EvenTilTheEnd.html",
     "title": "Even Til' the End",
     "album": "That's My God",
     "artist": "The Lindseys"
+  },
+  {
+    "file": "EverybodyWillBeHappyOverThere.html",
+    "title": "Everybody Will Be Happy Over There",
+    "album": "Long Live Old Time Religion",
+    "artist": "Old Time Preachers Quartet"
   },
   {
     "file": "FixItMan.html",
@@ -90,6 +102,12 @@
     "artist": "Unknown"
   },
   {
+    "file": "SoulFillingStation.html",
+    "title": "Soul Filling Station",
+    "album": "?",
+    "artist": "The Original Hinsons"
+  },
+  {
     "file": "TakeYourShoesOffMoses.html",
     "title": "Take Your Shoes Off Moses",
     "album": "Cry From the Cross",
@@ -118,6 +136,12 @@
     "title": "Theres Been a Change in Me",
     "album": "?",
     "artist": "The Paynes"
+  },
+  {
+    "file": "TiredOfYouSatan.html",
+    "title": "Now Listen to Me, Devil",
+    "album": "?",
+    "artist": "Tara Montpetit"
   },
   {
     "file": "TwelveGatesToTheCity-2.html",
