@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Mountain Mover</title>
+
+		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+	</head>
+
+	<body>
+		<h1 style="text-align: center; margin-bottom: 5px;" id="title">Mountain Mover</h1>
+		<h2 style="text-align: center; margin: 5px;" id="album">Rise Above (2006)</h2>
+		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;" id="artist">Talley Trio</h3>
+
+		<div class="lyrics">
+			<pre data-key="????">
+[Chorus]
+My God is a mountain mover
+My God's gonna make a way
+Can't count all the time He's proven
+We can trust him just have faith
+Take a hopeless situation
+Watch Him turn it all around
+Nothing is impossible
+I can't hold back I've gotta shout
+My God, My God My God
+Is a mountain mover
+
+[Verse 1]
+Got a problem in my pathway
+I feel I'm frozen here
+Doubts are circling high above me
+But in the shadow of my fear
+The Fire of faith is stirring
+Growing inside of me
+Reminding me of something
+I already believe
+
+[Bridge]
+He's a God of mighty miracles
+When the days are dark
+I will keep on trusting Him
+I will not lose heart
+			</pre>
+		</div>
+
+		<hr>
+		<h1 style="text-align: center;">YouTube</h1>
+		<div class="video-container">
+			<iframe src="https://www.youtube.com/embed/qka4lZd4TkA?si=Fkki0MMVnYfsWlwx" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
+	</body>
+</html>
