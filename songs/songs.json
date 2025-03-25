@@ -24,6 +24,12 @@
     "artist": "Bill Houston"
   },
   {
+    "file": "GoAndTellSomebody.html",
+    "title": "Go And Tell Somebody",
+    "album": "Live in Dayton (1990)",
+    "artist": "Kingsmen"
+  },
+  {
     "file": "HallelujahSide.html",
     "title": "The Hallelujah Side",
     "album": "?",
@@ -46,6 +52,12 @@
     "title": "I Played in the Band and Sang in the Choir",
     "album": "?",
     "artist": "The Booth Brothers"
+  },
+  {
+    "file": "IRememberLost.html",
+    "title": "I Remember Lost",
+    "album": "It Won't Be Long (2024)",
+    "artist": "Poet Voices"
   },
   {
     "file": "ISingBecause.html",
@@ -106,6 +118,12 @@
     "title": "I Promised the Lord I'd Make Him a Soldier",
     "album": "?",
     "artist": "Unknown"
+  },
+  {
+    "file": "MountatinMover.html",
+    "title": "Mountain Mover",
+    "album": "Rise Above (2006)",
+    "artist": "Talley Trio"
   },
   {
     "file": "SoulFillingStation.html",
