@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>I Sing Because</title>
+
+		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+	</head>
+
+	<body>
+		<h1 style="text-align: center; margin-bottom: 5px;" id="title">I Sing Because</h1>
+		<h2 style="text-align: center; margin: 5px;" id="album">Going Home (1987)</h2>
+		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;" id="artist">Author(s): Squire Parsons</h3>
+
+		<div class="lyrics">
+			<pre data-key="????">
+[Verse 1]
+I've Been Singing 'Bout my Lord for so many years
+I've Sung when I've been happy
+Even Sung When I've had Tears
+I've even had Folks ask me
+If It's All Been Just A Show
+But the Reason That I'm Singing
+I Want the World to Know
+
+[Chorus]
+I Sing Because There is an Empty Grave
+I Sing Because There is the Power to Save
+I Sing Because His Grace is Real to Me
+I Sing Because I Know I'm Not Alone
+I Sing Because Someday I'm Going Home
+Where I Shall Sing Through All Eternity
+
+[Verse 2]
+I've Sung to Those Walking Through the Fiery Trial
+I've Watched Their Saddened Faces Turn Into Happy Smiles
+I've Bowed my Head and Whispered
+Lord, Please do the Same For Me
+And I'm Glad That I Can Tell You
+He's Always Given Victory
+			</pre>
+		</div>
+
+		<hr>
+		<h1 style="text-align: center;">YouTube</h1>
+		<div class="video-container">
+			<iframe src="https://www.youtube.com/embed/Mp0805g7fdA?si=X7ieo3YIUJTf3peQ" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
+	</body>
+</html>
