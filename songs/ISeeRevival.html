@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>I See Revival</title>
+
+		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+	</head>
+
+	<body>
+		<h1 style="text-align: center; margin-bottom: 5px;" id="title">I See Revival</h1>
+		<h2 style="text-align: center; margin: 5px;" id="album">20/20</h2>
+		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;" id="artist">The Crabb Family</h3>
+
+		<div class="lyrics">
+			<pre data-key="????">
+[Verse 1]
+I see a town where nobody's forgotten cause everybody cares
+I see churches so filled up on Sundays they're bringing in folding chairs
+I see a crowd by the river, every color every age
+They're going down sinners, coming up saints
+
+[Chorus]
+I see revival like a wildfire spreading
+Looks a lot like heaven can't you see it
+All of Gods children living out his love
+Don't you know how much we need it
+His hope, his mercy and grace
+When I close my eyes and pray
+I see revival
+
+[Verse 2]
+Why not here, hey why not now can you tell me one good reason
+So many people desperate, hurtin', searching for something to believe in
+It's gonna take somebody, down on their knees
+One heart cryin' out let it start with me
+			</pre>
+		</div>
+
+		<hr>
+		<h1 style="text-align: center;">YouTube</h1>
+		<div class="video-container">
+			<iframe src="https://www.youtube.com/embed/hbs5-8U4wQQ?si=OuERlInlUyiPBBNW" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
+	</body>
+</html>
