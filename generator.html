@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Song Page Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; }
+    textarea { width: 100%; height: 200px; }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    input, textarea { margin-bottom: 10px; padding: 6px; width: 100%; }
+    button { padding: 10px 15px; margin-top: 10px; }
+  </style> -->
+</head>
+<body>
+  <h1>Create Song Page</h1>
+
+  <label>Title</label>
+  <input type="text" id="title">
+
+  <label>Artist</label>
+  <input type="text" id="artist">
+
+  <label>Album</label>
+  <input type="text" id="album">
+  
+  <label>Key</label>
+  <input type="text" id="key">
+
+  <label>YouTube Video ID</label>
+  <input type="text" id="video">
+
+  <label>Lyrics / Content</label>
+  <textarea id="content"></textarea>
+
+  <button onclick="generatePage()">Generate & Download</button>
+
+  <script>
+    function generatePage() {
+      const title = document.getElementById('title').value;
+      const artist = document.getElementById('artist').value;
+      const album = document.getElementById('album').value;
+      const video = document.getElementById('video').value;
+      const content = document.getElementById('content').value;
+      const songKey = document.getElementById('key').value;
+
+      // Turn title into CamelCase (no spaces)
+      const fileName = title.replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '') + ".html";
+
+      const template = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title}</title>
+  <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+</head>
+<body>
+  <h1 style="text-align: center; margin-bottom: 5px;" id="title">${title}</h1>
+  <h2 style="text-align: center; margin: 5px;" id="album">${album}</h2>
+  <h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;" id="artist">${artist}</h3>
+
+  <div class="lyrics">
+    <pre data-key="${songKey}">
+${content}
+    </pre>
+  </div>
+
+  <hr>
+  <h1 style="text-align: center;">YouTube</h1>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/${video}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"><\/script>
+  <script type="text/javascript" src="scripts/jquery.transposer.js"><\/script>
+  <script type="text/javascript">
+    $(function() {
+      $("pre").transpose();
+    });
+  <\/script>
+</body>
+</html>`;
+
+      // Create a Blob and trigger download
+      const blob = new Blob([template], { type: "text/html" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = fileName;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+  </script>
+</body>
+</html>
