@@ -24,10 +24,28 @@
     "artist": "Bill Houston"
   },
   {
+    "file": "GettinReadyToLeaveThisWorld.html",
+    "title": "Gettin Ready To Leave This World",
+    "album": "?",
+    "artist": "Luther G. Presley"
+  },
+  {
+    "file": "GiveUpAndLetJesusTakeOver.html",
+    "title": "Give Up and Let Jesus Take Over",
+    "album": "?",
+    "artist": "Happy Goodman Family"
+  },
+  {
     "file": "GoAndTellSomebody.html",
     "title": "Go And Tell Somebody",
     "album": "Live in Dayton (1990)",
     "artist": "Kingsmen"
+  },
+  {
+    "file": "GodIsGod.html",
+    "title": "God Is God",
+    "album": "?",
+    "artist": "Jimmy Swaggart"
   },
   {
     "file": "HallelujahSide.html",
@@ -102,6 +120,12 @@
     "artist": "Bill Monroe"
   },
   {
+    "file": "IsThereAMountain.html",
+    "title": "Is There A Mountain",
+    "album": "Serious Business",
+    "artist": "Carroll Roberson"
+  },
+  {
     "file": "IveGotMeAHome.html",
     "title": "I've Got Me a Home",
     "album": "?",
@@ -118,6 +142,12 @@
     "title": "Jesus Is A Rock",
     "album": "?",
     "artist": "Buddy Greene"
+  },
+  {
+    "file": "JesusIsWithMe.html",
+    "title": "Jesus Is With Me",
+    "album": "?",
+    "artist": "Jeremiah Yocom"
   },
   {
     "file": "JoysGonnaComeInTheMorning.html",
@@ -138,10 +168,22 @@
     "artist": "Unknown"
   },
   {
+    "file": "MasterBuilder.html",
+    "title": "Master Builder",
+    "album": "The Gospel Spirit",
+    "artist": "The Cathedrals"
+  },
+  {
     "file": "MountatinMover.html",
     "title": "Mountain Mover",
     "album": "Rise Above (2006)",
     "artist": "Talley Trio"
+  },
+  {
+    "file": "SomethingOnTheInside.html",
+    "title": "Something On The Inside",
+    "album": "Having Church With The Saints, Vol. 1",
+    "artist": "Bishop G.E. Patterson"
   },
   {
     "file": "SoulFillingStation.html",
@@ -166,6 +208,12 @@
     "title": "I Thank God for Grace",
     "album": "New Day Dawning",
     "artist": "The Whisnants"
+  },
+  {
+    "file": "TheWorldDidntGiveItToMe.html",
+    "title": "The World Didn't Give It To Me",
+    "album": "?",
+    "artist": "Shirley Caesar"
   },
   {
     "file": "TheresAManInHere.html",
@@ -214,5 +262,11 @@
     "title": "Well of Grace",
     "album": "Hallelujah",
     "artist": "The Greenes"
+  },
+  {
+    "file": "WellWorkTillJesusComes.html",
+    "title": "We'll Work Till Jesus Comes",
+    "album": "The Gospel Spirit",
+    "artist": "William Miller"
   }
 ]
