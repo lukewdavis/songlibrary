@@ -1,5 +1,17 @@
 [
   {
+    "file": "ButGod.html",
+    "title": "But God",
+    "album": "",
+    "artist": "Common Bond Quartet"
+  },
+  {
+    "file": "ByGrace.html",
+    "title": "By Grace",
+    "album": "By Grace",
+    "artist": "The Lore Family"
+  },
+  {
     "file": "EnemysCamp.html",
     "title": "Enemy's Camp Medley",
     "album": "Songs of Revival",
@@ -14,7 +26,7 @@
   {
     "file": "EverybodyWillBeHappyOverThere.html",
     "title": "Everybody Will Be Happy Over There",
-    "album": "Long Live Old Time Religion",
+    "album": "Long Live Old: Time Religion",
     "artist": "Old Time Preachers Quartet"
   },
   {
@@ -42,10 +54,22 @@
     "artist": "Kingsmen"
   },
   {
+    "file": "GoOutSinging.html",
+    "title": "Go Out Singing",
+    "album": "Walk of Faith",
+    "artist": "The Whisnants"
+  },
+  {
     "file": "GodIsGod.html",
     "title": "God Is God",
     "album": "?",
     "artist": "Jimmy Swaggart"
+  },
+  {
+    "file": "GonnaRainOnYourDesert.html",
+    "title": "Gonna Rain on Your Desert",
+    "album": "Field of Grace",
+    "artist": "Kirk Talley"
   },
   {
     "file": "HallelujahSide.html",
@@ -180,6 +204,18 @@
     "artist": "Talley Trio"
   },
   {
+    "file": "NeverBeenAnother.html",
+    "title": "Never Been Another",
+    "album": "He Made A Way",
+    "artist": "The Whisnants"
+  },
+  {
+    "file": "NotForSale.html",
+    "title": "Not For Sale",
+    "album": "Not For Sale",
+    "artist": "Michael Combs"
+  },
+  {
     "file": "SomethingOnTheInside.html",
     "title": "Something On The Inside",
     "album": "Having Church With The Saints, Vol. 1",
@@ -268,5 +304,17 @@
     "title": "We'll Work Till Jesus Comes",
     "album": "The Gospel Spirit",
     "artist": "William Miller"
+  },
+  {
+    "file": "WrittenInHeaven.html",
+    "title": "Written in Heaven",
+    "album": "A Gathering",
+    "artist": "Hoskins Family"
+  },
+  {
+    "file": "YouBetterGetOnBoard.html",
+    "title": "You Better Get On Board",
+    "album": "Think About There",
+    "artist": "Greater Vision"
   }
 ]
