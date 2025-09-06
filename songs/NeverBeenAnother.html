@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Never Been Another</title>
+  <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+</head>
+<body>
+  <h1 style="text-align: center; margin-bottom: 5px;" id="title">Never Been Another</h1>
+  <h2 style="text-align: center; margin: 5px;" id="album">He Made A Way</h2>
+  <h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;" id="artist">The Whisnants</h3>
+
+  <div class="lyrics">
+    <pre data-key="?">
+[Verse 1]
+No other every shed his blood to save us
+Then rose from the grave to live again
+No other ever lived a life completely holy
+And has the power to take away our sin
+
+[Chorus]
+There's never been another like my Jesus
+There's never been another like my Lord
+He's a faithful Father, He's closer than a brother
+There's never been another like my Lord
+
+[Verse 2]
+No other ever gave sight to a blind man
+Or raised a lifeless body from the grave
+No other ever left His throne in Heaven
+Just to help every sinner find their way
+
+[Bridge]
+He's a mountain mover
+He's a water walker
+He's a problem solver
+He's a great way maker
+    </pre>
+  </div>
+
+  <hr>
+  <h1 style="text-align: center;">YouTube</h1>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/w-IUKnnNaCw?si=15Hs6B3AZ6dJcZ0I" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("pre").transpose();
+    });
+  </script>
+</body>
+</html>

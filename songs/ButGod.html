@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>But God</title>
+  <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+</head>
+<body>
+  <h1 style="text-align: center; margin-bottom: 5px;" id="title">But God</h1>
+  <h2 style="text-align: center; margin: 5px;" id="album"></h2>
+  <h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;" id="artist">Common Bond Quartet</h3>
+
+  <div class="lyrics">
+    <pre data-key="?">
+[Verse 1]
+The call comes in. We get the word
+An accident, or something, has occurred.
+We begin to pray, believing we are heard.
+Doctors say, “Prepare for the worst.”
+
+[Chorus]
+But God, was first on the scene
+Before it happened…He knew our need
+How many of us would find it quite odd
+That we wouldn’t be here, except for two words…But God.
+
+[Verse 2]
+In all our lives we seldom know
+How many nights the angels were bent low.
+They are never far. The Father’s always close.
+Some may say, “Give up.” They don’t know…
+    </pre>
+  </div>
+
+  <hr>
+  <h1 style="text-align: center;">YouTube</h1>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("pre").transpose();
+    });
+  </script>
+</body>
+</html>
