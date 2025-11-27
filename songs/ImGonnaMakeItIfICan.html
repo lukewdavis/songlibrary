@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>I'm Gonna Make It If I Can</title>
+
+		<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.transposer.css" />
+	</head>
+
+	<body>
+		<h1 style="text-align: center; margin-bottom: 5px;" id="title">I'm Gonna Make It If I Can</h1>
+		<h2 style="text-align: center; margin: 5px;" id="album">There Is Love...Then There Is His Love</h2>
+		<h3 style="text-align: center; margin-top: 5px; margin-bottom: 10px;" id="artist">Mark Bishop</h3>
+
+		<div class="lyrics">
+			<pre data-key="G">
+[Verse 1]
+G                                    C         G
+There's a story in the Bible 'bout a man named Job.
+D                           C         G
+Trouble come to visit him a long time ago.
+G                            C
+Everybody said, "You must be doin' something wrong."
+G                    D             G
+Job said, "No, I'm a still holdin' on."
+
+[Chorus]
+G                      C         G
+I'm gonna make it if I can, if I can.
+D                             C         G
+Gonna make it to the promised land if I can.
+G                             C            G
+Though the devil rages, I'm a gonna make a stand
+       G           D            G
+'cause I'm a gonna make it if I can.
+
+[Verse 2]
+G                         C               G
+Moses and the Israelites, trying to break free,
+D                            C       G
+Cornered on the banks of the big Red Sea.
+G                          C
+"Thank you very much for a mighty, fine mess."
+G                              D         G
+Moses hollered back "I'm not a givin' up yet!"
+
+[Verse 3]
+G                               C     G
+When everything you do seems to fall apart,
+D                            C               G
+Here's a little song you can take it to your heart.
+G                          C
+Take it to the bank, it'll be ok.
+G                          D          G
+It worked back then, it'll still work today.
+			</pre>
+		</div>
+
+		<hr>
+		<h1 style="text-align: center;">YouTube</h1>
+		<div class="video-container">
+			<iframe src="https://www.youtube.com/embed/03ig2HLAu9M?si=pqDwwRx6gF2GwVZ-" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.transposer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("pre").transpose();
+			});
+		</script>
+	</body>
+</html>
