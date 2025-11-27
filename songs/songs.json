@@ -138,6 +138,12 @@
     "artist": "The McKameys"
   },
   {
+    "file": "ImGonnaMakeItIfICan.html",
+    "title": "I'm Gonna Make It If I Can",
+    "album": "There Is Love...Then There Is His Love",
+    "artist": "Mark Bishop"
+  },
+  {
     "file": "ImWorkingOnABuiling.html",
     "title": "Im Working on a Builing",
     "album": "The Gospel Spirit",
@@ -174,10 +180,22 @@
     "artist": "Jeremiah Yocom"
   },
   {
+    "file": "JoyOnTheOtherSideOfJordan.html",
+    "title": "Joy On The Other Side Of Jordan",
+    "album": "I Speak To You (1994)",
+    "artist": "Kirk Talley"
+  },
+  {
     "file": "JoysGonnaComeInTheMorning.html",
     "title": "Joy's Gonna Come In The Morning",
     "album": "Gospel Classics",
     "artist": "The Crist Family"
+  },
+  {
+    "file": "Legacy.html",
+    "title": "Legacy",
+    "album": "They Don't Know (2017)",
+    "artist": "Kingsmen"
   },
   {
     "file": "LittleGrainOfSand.html",
@@ -214,6 +232,12 @@
     "title": "Not For Sale",
     "album": "Not For Sale",
     "artist": "Michael Combs"
+  },
+  {
+    "file": "PreciousLordTakeMyHand.html",
+    "title": "Precious Lord, Take My Hand",
+    "album": "?",
+    "artist": "?"
   },
   {
     "file": "SomethingOnTheInside.html",
